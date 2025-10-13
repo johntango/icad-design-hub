@@ -6,7 +6,7 @@ import { Mail, Linkedin, Globe } from "lucide-react";
 const Committee = () => {
   const organizers = [
     { name: "Nam Suh, Founder of Axiomatic Design, US" },
-    { name: "John Williams, MIT, US" },
+    { name: "John Williams, MIT, USA" },
     { name: "Kate Thompson, GE, US" },
     { name: "Chris Brown, WPI, US",},
     { name: "Michael Foley, Reykjavík University, IS" },
