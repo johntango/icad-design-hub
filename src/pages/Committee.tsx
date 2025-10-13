@@ -5,26 +5,24 @@ import { Mail, Linkedin, Globe } from "lucide-react";
 
 const Committee = () => {
   const organizers = [
-    { name: "Nam Suh" },
-    { name: "John Williams" },
-    { name: "Kate Thompson" },
-    { name: "Chris Brown" },
-    { name: "Michael Foley" },
-    { name: "Clarice de Souza" },
-    { name: "Pam Mantri" },
-    { name: "Erik Puik" },
-    { name: "Erwin Rauch" },
-    { name: "John Thomas" },
-    { name: "Gabriele Arcidiacono" }
+    { name: "Nam Suh, Founder of Axiomatic Design, US" },
+    { name: "John Williams, MIT, US" },
+    { name: "Kate Thompson, GE, US" },
+    { name: "Chris Brown, WPI, US",},
+    { name: "Michael Foley, Reykjavík University, IS" },
+    { name: "Clarice de Souza, UCLouvain, BE" },
+    { name: "Pam Mantri, Cognitive Tools, US" },
+    { name: "Erik Puik, Fontys University of Applied Science, NL" },
+    { name: "Erwin Rauch, Free University of Bozen, IT" },
+    { name: "John Thomas, Cognitive Tools, US" },
+    { name: "Gabriele Arcidiacono, Universita' Degli Studi Guglielmo Marconi, IT" }
   ];
 
   const reviewers = [
-    "Dr. Elena Kotsanova - Carnegie Mellon University",
-    "Prof. James Liu - University of Washington",
-    "Dr. Maya Singh - Adobe Research",
-    "Prof. David Thompson - UC Berkeley",
-    "Dr. Lisa Park - Microsoft Research",
-    "Prof. Ahmed Hassan - University of Toronto"
+    "Dr. Chris Brown - Worcester Polytechnic Institute",
+    "TBD",
+    "TBD",
+    "TBD",
   ];
 
   return (
