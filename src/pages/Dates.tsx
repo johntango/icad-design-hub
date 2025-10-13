@@ -8,12 +8,14 @@ const Dates = () => {
     {
       category: "Call for Papers",
       dates: [
-        { event: "Paper Submission Opens", date: "October 1, 2025", status: "upcoming" },
-        { event: "Abstract Submission Deadline", date: "December 15, 2025", status: "upcoming" },
-        { event: "Full Paper Submission Deadline", date: "January 15, 2026", status: "upcoming" },
-        { event: "Notification of Acceptance", date: "March 1, 2026", status: "future" },
-        { event: "Camera-Ready Papers Due", date: "April 15, 2026", status: "future" }
-      ]
+    { event: "Abstract Submission Deadline", date: "December 15, 2025", status: "upcoming"  },
+    { event: "Notification of Acceptance", date: "December 22, 2025", status: "upcoming"  },
+    { event: "Paper Submission Deadline", date: "February 28, 2026", status: "upcoming"  },
+    { event: "Reviewer Feedback", date: "March 16, 2026", status: "upcoming"  },
+    { event: "Camera-Ready Paper Submission", date: "April 15, 2026", status: "upcoming"  },
+    { event: "Note of Final Acceptance", date: "April 30, 2026", status: "upcoming"  },
+    { event: "Conference Dates", date: "June 24-25, 2026", status: "upcoming"  }
+  ]
     },
     {
       category: "Registration",
@@ -40,7 +42,7 @@ const Dates = () => {
     { month: "Oct 2025", event: "Call for papers opens" },
     { month: "Nov 2025", event: "Registration opens" },
     { month: "Dec 2025", event: "Abstract deadline" },
-    { month: "Jan 2026", event: "Full paper deadline" },
+    { month: "Feb 2026", event: "Full paper deadline" },
     { month: "Mar 2026", event: "Notification & Early bird ends" },
     { month: "Apr 2026", event: "Camera-ready papers" },
     { month: "May 2026", event: "Regular registration ends" },

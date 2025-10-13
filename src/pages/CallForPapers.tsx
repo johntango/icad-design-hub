@@ -22,13 +22,15 @@ const CallForPapers = () => {
   };
 
   const topics = [
+    "Advances in Axiomatic Design Theory",
+    "Design Sciences and Applications",
     "Axiomatic Design Principles and AI Integration",
     "Principled AI for Design Automation",
+    "Complexity and Design of Complex Systems",
     "Design Axioms in Machine Learning Systems",
-    "Independence Axiom in AI-Driven Design",
-    "Information Axiom for AI Design Optimization",
+    "Axiomatic Design for Sustainability",
     "Complexity Theory in AI-Assisted Design",
-    "Systematic Design Methodologies with AI",
+    "AD in Software Engineering and Design",
     "Functional Requirements Analysis using AI",
     "Design Matrix Optimization through Machine Learning",
     "Coupling and Decoupling in AI System Design",
@@ -43,9 +45,12 @@ const CallForPapers = () => {
   ];
 
   const dates = [
-    { event: "Paper Submission Deadline", date: "January 15, 2026" },
-    { event: "Notification of Acceptance", date: "March 1, 2026" },
-    { event: "Camera-Ready Papers Due", date: "April 15, 2026" },
+    { event: "Abstract Submission Deadline", date: "December 15, 2025" },
+    { event: "Notification of Acceptance", date: "December 22, 2025" },
+    { event: "Paper Submission Deadline", date: "February 28, 2026" },
+    { event: "Reviewer Feedback", date: "March 16, 2026" },
+    { event: "Camera-Ready Paper Submission", date: "April 15, 2026" },
+    { event: "Note of Final Acceptance", date: "April 30, 2026" },
     { event: "Conference Dates", date: "June 24-25, 2026" }
   ];
 
