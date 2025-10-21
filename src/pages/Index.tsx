@@ -53,8 +53,8 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="shadow-hero bg-white text-conference-dark hover:bg-white/90" asChild>
-              <a href="/register-interest">
-                Get Updates
+              <a href="/payment">
+                Register Interest
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -127,7 +127,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-hero" asChild>
-              <a href="/register-interest">Get Updates</a>
+              <a href="/payment">Register Interest</a>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
               <a href="/call-for-papers">View Call for Papers</a>
