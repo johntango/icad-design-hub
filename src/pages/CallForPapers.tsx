@@ -84,9 +84,16 @@ const CallForPapers = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
             Call for Papers
-            <embed src="public/ICAD2026_CallPapers.pdf" type="application/pdf" width="100%" height="600px" />
-            <a href="https://scientificnet-my.sharepoint.com/:p:/g/personal/errauch_unibz_it/EUfjUsKcdNRLoJkVB-SH0ekB4p2TQS7OjEwPHpw0tjb-Yw?rtime=HPFvDHgK3kg" target="_blank" rel="noopener noreferrer" className="ml-4 text-sm font-normal underline text-white">Submit Abstracts and Papers in Conftool here.</a>
           </h1>
+          <a href="https://scientificnet-my.sharepoint.com/:p:/g/personal/errauch_unibz_it/EUfjUsKcdNRLoJkVB-SH0ekB4p2TQS7OjEwPHpw0tjb-Yw?rtime=HPFvDHgK3kg" target="_blank" rel="noopener noreferrer" className="text-sm underline text-white mb-6 inline-block">
+            Submit Abstracts and Papers in Conftool here.
+          </a>
+          
+          {/* PDF Display */}
+          <div className="mb-8 max-w-5xl mx-auto">
+            <embed src="/ICAD2026_CallPapers.pdf" type="application/pdf" width="100%" height="800px" className="border border-border rounded-lg" />
+          </div>
+
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Submit your research to the premier conference on Principles of AI and Design. 
             Share your innovations with leading researchers and practitioners.
