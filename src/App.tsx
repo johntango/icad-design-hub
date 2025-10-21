@@ -15,6 +15,7 @@ import Program from "./pages/Program";
 import Dates from "./pages/Dates";
 import Visa from "./pages/Visa";
 import Admin from "./pages/Admin";
+import RegisterInterest from "./pages/RegisterInterest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/visa" element={<Visa />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path="/register-interest" element={<RegisterInterest />} />
             <Route path="/admin" element={<Admin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
