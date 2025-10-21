@@ -1,4 +1,4 @@
-# Welcome to your Lovable project.
+# Welcome to your Lovable project:
 To move to Github
 in App.tsx change <BrowserRouter> to <HashRouter>
 Create action to deploy to dist on build in  .github/workflows/pages.yml 
