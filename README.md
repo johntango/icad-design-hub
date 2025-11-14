@@ -1,6 +1,6 @@
 # Welcome to your Lovable project:
 To move to Github
-in App.tsx change <BrowserRouter> to <HashRouter>
+In App.tsx change <BrowserRouter> to <HashRouter>
 Create action to deploy to dist on build in  .github/workflows/pages.yml 
 Vite + React → GitHub Pages (project repo)
 (works out of the box for https://<user>.github.io/<repo>/)
