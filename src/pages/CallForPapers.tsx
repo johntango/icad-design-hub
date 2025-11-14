@@ -91,7 +91,7 @@ const CallForPapers = () => {
           
           {/* PDF Display */}
           <div className="mb-8 max-w-5xl mx-auto">
-            <embed src="/ICAD2026_CallPapers.pdf" type="application/pdf" width="100%" height="800px" className="border border-border rounded-lg" />
+            <embed src="/public/ICAD2026_Call for papers[65].pdf" type="application/pdf" width="100%" height="800px" className="border border-border rounded-lg" />
           </div>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -100,7 +100,7 @@ const CallForPapers = () => {
           </p>
           <div className="mt-8">
             <Button size="lg" className="shadow-hero" onClick={handleSubmitPaper}>
-              {user ? "Submit Your Paper" : "Sign In to Submit Paper"}
+              {user ? "Submit Your Paper" : "Sign In to Register Interest"}
             </Button>
           </div>
         </div>

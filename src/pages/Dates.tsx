@@ -20,7 +20,7 @@ const Dates = () => {
     {
       category: "Registration",
       dates: [
-        { event: "Early Bird Registration Opens", date: "November 1, 2025", status: "upcoming" },
+        { event: "Early Bird Registration Opens", date: "January 10, 2026", status: "upcoming" },
         { event: "Early Bird Deadline", date: "March 1, 2026", status: "upcoming" },
         { event: "Regular Registration Deadline", date: "May 1, 2026", status: "future" },
         { event: "Student Registration Deadline", date: "May 15, 2026", status: "future" },
@@ -33,13 +33,13 @@ const Dates = () => {
         { event: "Pre-Conference Workshops", date: "June 23, 2026", status: "future" },
         { event: "Main Conference Day 1", date: "June 24, 2026", status: "future" },
         { event: "Main Conference Day 2", date: "June 25, 2026", status: "future" },
-        { event: "Post-Conference Tours", date: "June 26, 2026", status: "future" }
+        { event: "Post-Conference Events", date: "June 26, 2026", status: "future" }
       ]
     }
   ];
 
   const timeline = [
-    { month: "Oct 2025", event: "Call for papers opens" },
+    { month: "Nov 2025", event: "Call for papers opens" },
     { month: "Nov 2025", event: "Registration opens" },
     { month: "Dec 2025", event: "Abstract deadline" },
     { month: "Feb 2026", event: "Full paper deadline" },

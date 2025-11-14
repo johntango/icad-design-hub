@@ -58,12 +58,11 @@ const Committee = () => {
 
         {/* Program Committee */}
         <section>
-          <h2 className="text-3xl font-bold mb-8 text-center">Program Committee</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Workshops Committee</h2>
           <Card className="shadow-card">
             <CardContent className="p-8">
               <p className="text-center text-muted-foreground mb-8">
-                Our program committee consists of leading experts in AI, UX design, 
-                and human-computer interaction from top institutions worldwide.
+                Our program committee consists of leading experts in AI Advances design, and human-computer interaction from top institutions worldwide.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {reviewers.map((reviewer, index) => (
