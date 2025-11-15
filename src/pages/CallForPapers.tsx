@@ -91,7 +91,7 @@ const CallForPapers = () => {
           
           {/* PDF Display */}
           <div className="mb-8 max-w-5xl mx-auto">
-            <embed src="/public/CallForPapers2026.pdf" type="application/pdf" width="100%" height="800px" className="border border-border rounded-lg" />
+            <embed src="/CallForPapers2026.pdf" type="application/pdf" width="100%" height="800px" className="border border-border rounded-lg" />
           </div>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
