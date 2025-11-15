@@ -102,8 +102,7 @@ serve(async (req) => {
       );
     }
 
-    // Get customer details
-    const customerEmail = session.customer_email || session.customer_details?.email;
+    // Customer email already extracted above, check if it exists
     if (!customerEmail) {
       throw new Error("Customer email not found");
     }

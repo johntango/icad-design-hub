@@ -43,7 +43,7 @@ export type Database = {
           created_at: string | null
           expires_at: string
           id: string
-          ip_address: unknown | null
+          ip_address: unknown
           last_used_at: string | null
           session_token: string
           user_agent: string | null
@@ -53,7 +53,7 @@ export type Database = {
           created_at?: string | null
           expires_at: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           last_used_at?: string | null
           session_token: string
           user_agent?: string | null
@@ -63,7 +63,7 @@ export type Database = {
           created_at?: string | null
           expires_at?: string
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           last_used_at?: string | null
           session_token?: string
           user_agent?: string | null
@@ -196,24 +196,22 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      check_rate_limit: {
-        Args:
-          | { ip: string; max_attempts?: number; window_minutes?: number }
-          | { ip: unknown; max_attempts?: number; window_minutes?: number }
-        Returns: boolean
-      }
-      cleanup_expired_sessions: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      is_admin: {
-        Args: { _user_id?: string }
-        Returns: boolean
-      }
-      validate_admin_session: {
-        Args: { token: string }
-        Returns: string
-      }
+      check_rate_limit:
+        | {
+            Args: { ip: string; max_attempts?: number; window_minutes?: number }
+            Returns: boolean
+          }
+        | {
+            Args: {
+              ip: unknown
+              max_attempts?: number
+              window_minutes?: number
+            }
+            Returns: boolean
+          }
+      cleanup_expired_sessions: { Args: never; Returns: undefined }
+      is_admin: { Args: { _user_id?: string }; Returns: boolean }
+      validate_admin_session: { Args: { token: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "user"
