@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Globe } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const Committee = () => {
   const organizers = [
@@ -23,6 +24,46 @@ const Committee = () => {
     "TBD",
     "TBD",
     "TBD",
+  ];
+
+  const scientificCommittee = [
+    { name: "Alessandro Giorgetti", affiliation: "Roma Tre University, IT" },
+    { name: "Amro Farid", affiliation: "Masdar Institute/MIT, AE" },
+    { name: "Ang Liu", affiliation: "UNSW, AU" },
+    { name: "António Gabriel-Santos", affiliation: "FCT NOVA, PT" },
+    { name: "A. M. Gonçalves-Coelho", affiliation: "FCT NOVA, PT" },
+    { name: "António Mourão", affiliation: "FCT NOVA, PT" },
+    { name: "Bojan Babic", affiliation: "University of Belgrade, Serbia" },
+    { name: "Camilla Pezzica", affiliation: "Welsh School of Architecture, UK" },
+    { name: "Christopher A. Brown", affiliation: "WPI, USA" },
+    { name: "Clarice Bell de Souza", affiliation: "Welsh School of Architecture, UK" },
+    { name: "David Cochran", affiliation: "Purdue University Lafayette Indiana, USA" },
+    { name: "Dominik Matt", affiliation: "University of Bolzano, IT" },
+    { name: "Erwin Rauch", affiliation: "University of Bolzano, IT" },
+    { name: "Efrén Benavides", affiliation: "UPM, ES" },
+    { name: "Erik Puik", affiliation: "Fontys University of Applied Sciences Eindhoven, NL" },
+    { name: "Gabriele Arcidiacono", affiliation: "G. Marconi University, IT" },
+    { name: "Goran Putnik", affiliation: "Univ. Minho, PT" },
+    { name: "Hilario Oh", affiliation: "MIT, USA" },
+    { name: "Inas Khayal", affiliation: "Dartmouth Institute, USA" },
+    { name: "João Fradinho", affiliation: "FCT NOVA, PT" },
+    { name: "John Thomas", affiliation: "Cognitive Tools Ltd. LLC, USA" },
+    { name: "Joseph Timothy Foley", affiliation: "Reykjavik University, IS" },
+    { name: "Jussi Kantola", affiliation: "University of Turku UTU, FI" },
+    { name: "Laurențiu Slătineanu", affiliation: "TUIASI, RO" },
+    { name: "Luc Mathieu", affiliation: "ENS Cachan, FR" },
+    { name: "Marianna Marchesi", affiliation: "Welsh School of Architecture, UK" },
+    { name: "Masayuki Nakao", affiliation: "University of Tokyo, JP" },
+    { name: "Miguel Cavique", affiliation: "Naval Academy, PT" },
+    { name: "Nam P. Suh", affiliation: "MIT, USA" },
+    { name: "Oana Dodun", affiliation: "TUIASI, RO" },
+    { name: "Paolo Citti", affiliation: "G. Marconi University, IT" },
+    { name: "Petra Foith-Förster", affiliation: "Bosch, D" },
+    { name: "Petru Duşa", affiliation: "TUIASI, RO" },
+    { name: "Sami Kara", affiliation: "UNSW, AU" },
+    { name: "Sina Peukert", affiliation: "Karlsruher Institut für Technologie, D" },
+    { name: "Taesik Lee", affiliation: "KAIST, KO" },
+    { name: "Vladimir Modrak", affiliation: "TU Kosice, SK" },
   ];
 
   return (
@@ -57,7 +98,7 @@ const Committee = () => {
         </section>
 
         {/* Program Committee */}
-        <section>
+        <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Workshops Committee</h2>
           <Card className="shadow-card">
             <CardContent className="p-8">
@@ -72,6 +113,31 @@ const Committee = () => {
                   </div>
                 ))}
               </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Scientific Committee */}
+        <section>
+          <h2 className="text-3xl font-bold mb-8 text-center">ICAD 2026 Scientific Committee</h2>
+          <Card className="shadow-card">
+            <CardContent className="p-8">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-semibold">Board Member</TableHead>
+                    <TableHead className="font-semibold">Affiliation</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {scientificCommittee.map((member, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{member.name}</TableCell>
+                      <TableCell>{member.affiliation}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </CardContent>
           </Card>
         </section>
