@@ -8,7 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { supabase } from "@/integrations/supabase/client";
-import { Shield, Users, UserCheck, LogOut, AlertTriangle } from "lucide-react";
+import { Shield, Users, UserCheck, LogOut, AlertTriangle, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
@@ -251,6 +251,49 @@ const Admin = () => {
     });
   };
 
+  const downloadCSV = (data: any[], filename: string, headers: string[]) => {
+    // Create CSV content
+    const csvContent = [
+      headers.join(','),
+      ...data.map(row => 
+        headers.map(header => {
+          const value = row[header.toLowerCase().replace(' ', '')] || '';
+          // Escape commas and quotes in the data
+          return `"${String(value).replace(/"/g, '""')}"`;
+        }).join(',')
+      )
+    ].join('\n');
+
+    // Create blob and download
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', filename);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const downloadAttendeesCSV = () => {
+    const headers = ['Name', 'Email', 'Affiliation', 'Status', 'CreatedAt', 'StripePaymentIntentId'];
+    downloadCSV(attendees, 'attendees.csv', headers);
+    toast({
+      title: "Download started",
+      description: "Attendees data exported to CSV",
+    });
+  };
+
+  const downloadInterestsCSV = () => {
+    const headers = ['Name', 'Email', 'Affiliation', 'Notes', 'CreatedAt'];
+    downloadCSV(interests, 'interest-registrations.csv', headers);
+    toast({
+      title: "Download started",
+      description: "Interest registrations exported to CSV",
+    });
+  };
+
   if (!isAuthenticated) {
     return (
       <Layout currentPage="admin">
@@ -364,8 +407,16 @@ const Admin = () => {
           <TabsContent value="attendees" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Conference Attendees</CardTitle>
-                <p className="text-muted-foreground">Paid registrations with payment status</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle>Conference Attendees</CardTitle>
+                    <p className="text-muted-foreground">Paid registrations with payment status</p>
+                  </div>
+                  <Button onClick={downloadAttendeesCSV} variant="outline" size="sm">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download CSV
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -420,8 +471,16 @@ const Admin = () => {
           <TabsContent value="interests" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Interest Registrations</CardTitle>
-                <p className="text-muted-foreground">Users who signed up for updates</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle>Interest Registrations</CardTitle>
+                    <p className="text-muted-foreground">Users who signed up for updates</p>
+                  </div>
+                  <Button onClick={downloadInterestsCSV} variant="outline" size="sm">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download CSV
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
                 {loading ? (
