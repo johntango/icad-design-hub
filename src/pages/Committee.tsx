@@ -17,7 +17,8 @@ const Committee = () => {
     { name: "Erwin Rauch, Free University of Bozen, IT" },
     { name: "John Thomas, Cognitive Tools, US" },
     { name: "Gabriele Arcidiacono, Universita' Degli Studi Guglielmo Marconi, IT" },
-    { name: "João Fradinho, Universidade NOVA de Lisboa, PT" }
+    { name: "João Fradinho, Universidade NOVA de Lisboa, PT" },
+    { name: "David Cochran, Purdue University, US" }
   ];
 
   const reviewers = [
