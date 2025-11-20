@@ -16,7 +16,8 @@ const Committee = () => {
     { name: "Erik Puik, Fontys University of Applied Science, NL" },
     { name: "Erwin Rauch, Free University of Bozen, IT" },
     { name: "John Thomas, Cognitive Tools, US" },
-    { name: "Gabriele Arcidiacono, Universita' Degli Studi Guglielmo Marconi, IT" }
+    { name: "Gabriele Arcidiacono, Universita' Degli Studi Guglielmo Marconi, IT" },
+    { name: "João Fradinho, Universidade NOVA de Lisboa, PT" }
   ];
 
   const reviewers = [
