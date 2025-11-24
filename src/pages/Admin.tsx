@@ -57,7 +57,7 @@ const Admin = () => {
           expiresAt
         }));
         
-        fetchData();
+        fetchData(newToken);
         toast({
           title: "Access granted",
           description: "Welcome to the secure admin panel",
@@ -105,12 +105,25 @@ const Admin = () => {
     navigate('/');
   };
 
-  const fetchData = async () => {
+  const fetchData = async (token?: string) => {
     setLoading(true);
     try {
+      // Use the provided token or fall back to state
+      const tokenToUse = token || sessionToken;
+      
+      if (!tokenToUse) {
+        console.error('No session token available');
+        toast({
+          title: "Authentication Error",
+          description: "No valid session found. Please log in.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       // Use edge function with service role privileges to bypass RLS
       const { data, error } = await supabase.functions.invoke('get-admin-data', {
-        body: { sessionToken }
+        body: { sessionToken: tokenToUse }
       });
 
       if (error) {
@@ -156,7 +169,7 @@ const Admin = () => {
       if (success) {
         setIsAuthenticated(true);
         setSessionToken(token);
-        fetchData();
+        fetchData(token);
         return true;
       }
     } catch (error) {
@@ -182,7 +195,7 @@ const Admin = () => {
           setIsAuthenticated(true);
           setSessionToken(response.data.sessionToken);
           setSessionExpiry(response.data.expiresAt);
-          fetchData();
+          fetchData(response.data.sessionToken);
           toast({
             title: "Auto-authenticated for testing",
             description: "Admin panel accessed automatically",
