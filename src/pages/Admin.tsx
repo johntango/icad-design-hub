@@ -108,28 +108,28 @@ const Admin = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      // Fetch attendees
-      const { data: attendeeData, error: attendeeError } = await supabase
-        .from('attendee')
-        .select('*')
-        .order('createdat', { ascending: false });
+      // Use edge function with service role privileges to bypass RLS
+      const { data, error } = await supabase.functions.invoke('get-admin-data', {
+        body: { sessionToken }
+      });
 
-      if (attendeeError) {
-        console.error('Error fetching attendees:', attendeeError);
+      if (error) {
+        console.error('Error fetching admin data:', error);
+        toast({
+          title: "Error",
+          description: "Failed to fetch registration data",
+          variant: "destructive",
+        });
+      } else if (data?.success) {
+        setAttendees(data.attendees || []);
+        setInterests(data.interests || []);
       } else {
-        setAttendees(attendeeData || []);
-      }
-
-      // Fetch interests
-      const { data: interestData, error: interestError } = await supabase
-        .from('interest')
-        .select('*')
-        .order('createdat', { ascending: false });
-
-      if (interestError) {
-        console.error('Error fetching interests:', interestError);
-      } else {
-        setInterests(interestData || []);
+        toast({
+          title: "Authentication Error",
+          description: "Your session may have expired. Please log in again.",
+          variant: "destructive",
+        });
+        handleLogout();
       }
     } catch (error) {
       console.error('Error fetching data:', error);
