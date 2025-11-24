@@ -307,6 +307,44 @@ const Admin = () => {
     });
   };
 
+  const clearAttendees = async () => {
+    if (!confirm('Are you sure you want to clear all test attendees? This cannot be undone.')) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('clear-attendees', {
+        body: { sessionToken }
+      });
+
+      if (error || !data?.success) {
+        console.error('Error clearing attendees:', error);
+        toast({
+          title: "Error",
+          description: "Failed to clear attendees",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Success",
+          description: `Cleared ${data.count} test attendees`,
+        });
+        // Refresh the data
+        await fetchData(sessionToken);
+      }
+    } catch (error) {
+      console.error('Error clearing attendees:', error);
+      toast({
+        title: "Error",
+        description: "Failed to clear attendees",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <Layout currentPage="admin">
@@ -425,10 +463,16 @@ const Admin = () => {
                     <CardTitle>Conference Attendees</CardTitle>
                     <p className="text-muted-foreground">Paid registrations with payment status</p>
                   </div>
-                  <Button onClick={downloadAttendeesCSV} variant="outline" size="sm">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download CSV
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button onClick={clearAttendees} variant="destructive" size="sm" disabled={loading || attendees.length === 0}>
+                      <AlertTriangle className="mr-2 h-4 w-4" />
+                      Clear Test Data
+                    </Button>
+                    <Button onClick={downloadAttendeesCSV} variant="outline" size="sm">
+                      <Download className="mr-2 h-4 w-4" />
+                      Download CSV
+                    </Button>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
