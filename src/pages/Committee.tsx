@@ -8,7 +8,7 @@ const Committee = () => {
   const organizers = [
     { name: "Nam Suh, Founder of Axiomatic Design, US" },
     { name: "John Williams, MIT, USA" },
-    { name: "Kate Thompson, GE, US" },
+    { name: "Mary Kathryn Thompson, Baker Hughes, US" },
     { name: "Chris Brown, WPI, US",},
     { name: "Joseph Foley, Reykjavík University, IS" },
     { name: "Clarice de Souza, UCLouvain, BE" },
