@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import splashMIT from "@/assets/splash-mit.png";
 
 const Index = () => {
   const highlights = [
@@ -36,7 +37,7 @@ const Index = () => {
       <section className="relative min-h-[80vh] flex items-start justify-center overflow-hidden pt-8">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(/lovable-uploads/5a7e57c6-6550-4ab1-a7ae-f6459e6d4a79.png)` }}
+          style={{ backgroundImage: `url(${splashMIT})` }}
         >
           <div className="absolute inset-0 gradient-dark opacity-60"></div>
         </div>
