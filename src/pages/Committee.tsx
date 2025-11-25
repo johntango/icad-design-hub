@@ -10,7 +10,7 @@ const Committee = () => {
     { name: "John Williams, MIT, USA" },
     { name: "Kate Thompson, GE, US" },
     { name: "Chris Brown, WPI, US",},
-    { name: "Michael Foley, Reykjavík University, IS" },
+    { name: "Joseph Foley, Reykjavík University, IS" },
     { name: "Clarice de Souza, UCLouvain, BE" },
     { name: "Pam Mantri, Cognitive Tools, US" },
     { name: "Erik Puik, Fontys University of Applied Science, NL" },
@@ -18,6 +18,7 @@ const Committee = () => {
     { name: "John Thomas, Cognitive Tools, US" },
     { name: "Gabriele Arcidiacono, Universita' Degli Studi Guglielmo Marconi, IT" },
     { name: "João Fradinho, Universidade NOVA de Lisboa, PT" },
+    { name: "Miguel Cavique, Universidade NOVA de Lisboa, PT" },
     { name: "David Cochran, Purdue University, US" }
   ];
 
