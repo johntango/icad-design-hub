@@ -86,7 +86,7 @@ const CallForPapers = () => {
             Call for Papers
           </h1>
           <a href="https://www.conftool.com/icad2026/" target="_blank" rel="noopener noreferrer" className="text-sm underline text-white mb-6 inline-block">
-            Submit Abstracts and Papers in Conftool here.
+            <h2></h2>Submit Abstracts and Papers in Conftool here.</a>h2>
           </a>
           
           {/* PDF Display */}
