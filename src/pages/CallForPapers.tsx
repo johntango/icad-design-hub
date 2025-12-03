@@ -85,9 +85,8 @@ const CallForPapers = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
             Call for Papers
           </h1>
-        
-          <a href="https://www.conftool.com/icad2026/" style="font-size: 24px;" target="_blank" rel="noopener noreferrer" className="text-sm underline text-white mb-6 inline-block">
-            Submit Abstracts and Papers in Conftool here.</a>
+          <a href="https://www.conftool.com/icad2026/" target="_blank" rel="noopener noreferrer" className="text-2xl underline text-white mb-6 inline-block">
+            Submit Abstracts and Papers in Conftool here.
           </a>
           
           {/* PDF Display */}
