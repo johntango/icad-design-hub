@@ -48,7 +48,7 @@ const Visa = () => {
     },
     {
       title: "Hotel Reservation",
-      description: "Confirmed accommodation in San Francisco",
+      description: "Confirmed accommodation in Cambridge, MA",
       required: "For visa applications",
       icon: <Globe className="h-5 w-5" />
     },

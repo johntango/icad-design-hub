@@ -171,12 +171,12 @@ const Dates = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                All deadlines are in Pacific Standard Time (PST/PDT). The conference will be held in Pacific Time.
+                All deadlines are in Eastern Standard Time (EST/EDT). The conference will be held in Eastern Time.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className="p-3 rounded-lg bg-muted/30">
-                  <p className="font-semibold">San Francisco, CA</p>
-                  <p className="text-muted-foreground">PST/PDT (Conference Time)</p>
+                  <p className="font-semibold">Cambridge, MA</p>
+                  <p className="text-muted-foreground">EST/EDT (Conference Time)</p>
                 </div>
                 <div className="p-3 rounded-lg bg-muted/30">
                   <p className="font-semibold">New York, NY</p>
