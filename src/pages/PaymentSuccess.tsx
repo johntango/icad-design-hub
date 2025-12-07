@@ -132,7 +132,7 @@ const PaymentSuccess = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary" />
-                    <span>San Francisco, CA</span>
+                    <span>Cambridge, MA</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Clock className="h-5 w-5 text-primary" />
