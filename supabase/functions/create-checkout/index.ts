@@ -53,8 +53,8 @@ serve(async (req) => {
 
     // Define pricing based on plan type
     const pricingMap: Record<string, { amount: number; name: string }> = {
-      "Early Bird": { amount: 59900, name: "Early Bird Conference Registration" }, // $599
-      "Regular": { amount: 49900, name: "Regular Conference Registration" }, // $499
+      "Early Bird": { amount: 49900, name: "Early Bird Conference Registration" }, // $499
+      "Regular": { amount: 59900, name: "Regular Conference Registration" }, // $599
       "Student": { amount: 20000, name: "Student Conference Registration" } // $200
     };
 
