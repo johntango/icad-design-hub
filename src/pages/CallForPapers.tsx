@@ -174,7 +174,7 @@ const CallForPapers = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• ACM format (double-column)</li>
+                  <li>• <a href="https://www.springer.com/in/authors-editors/conference-proceedings/conference-proceedings-guidelines?srsltid=AfmBOopCml1vT_02xkTr1v1IeH09LZOEfngAalv4AM6AgznFYVorkFTy" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Springer format</a></li>
                   <li>• Anonymous submissions for review</li>
                   <li>• Include abstract (150-250 words)</li>
                   <li>• 5-8 keywords required</li>
