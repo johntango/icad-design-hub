@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, FileText, Award, Users } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
 import { AuthModal } from "@/components/AuthModal";
 
@@ -54,28 +54,6 @@ const CallForPapers = () => {
     { event: "Conference Dates", date: "June 24-25, 2026" }
   ];
 
-  const tracks = [
-    {
-      title: "Full Papers",
-      description: "Original research contributions (8-12 pages)",
-      icon: <FileText className="h-6 w-6" />
-    },
-    {
-      title: "Short Papers",
-      description: "Work-in-progress and position papers (4-6 pages)",
-      icon: <FileText className="h-6 w-6" />
-    },
-    {
-      title: "Industry Track",
-      description: "Case studies and practical applications (6-8 pages)",
-      icon: <Users className="h-6 w-6" />
-    },
-    {
-      title: "Student Papers",
-      description: "Graduate student research (4-8 pages)",
-      icon: <Award className="h-6 w-6" />
-    }
-  ];
 
   return (
     <Layout currentPage="call-for-papers">
@@ -123,27 +101,6 @@ const CallForPapers = () => {
           </div>
         </section>
 
-        {/* Submission Tracks */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Submission Tracks</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {tracks.map((track, index) => (
-              <Card key={index} className="shadow-card hover:shadow-glow transition-smooth">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2 rounded-lg gradient-accent text-white">
-                      {track.icon}
-                    </div>
-                    <CardTitle>{track.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{track.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* Topics */}
         <section className="mb-16">
