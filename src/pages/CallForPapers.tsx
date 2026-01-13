@@ -131,7 +131,9 @@ const CallForPapers = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• <a href="https://www.springer.com/in/authors-editors/conference-proceedings/conference-proceedings-guidelines?srsltid=AfmBOopCml1vT_02xkTr1v1IeH09LZOEfngAalv4AM6AgznFYVorkFTy" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Springer format</a></li>
+                  <li>• <a href="https://drive.google.com/file/d/1kYEGjYx_aPvO_trgDb-TzvCNF3AdKQXG/view" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Word Template (2026Template Word.docm)</a></li>
+                  <li>• <a href="https://drive.google.com/file/d/1Z87LZi11_ib_w0eT9Z3ATxsSoXt5qXTl/view" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">Mac Template (2026Template_Mac.docm)</a></li>
+                  <li>• <a href="https://drive.google.com/file/d/17mFV7QlUVOo86yRmLIgO2L0f2LFQ8MaG/view" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">LaTeX Template (LaTexPackage2026.zip)</a></li>
                   <li>• Anonymous submissions for review</li>
                   <li>• Include abstract (150-250 words)</li>
                   <li>• 5-8 keywords required</li>
