@@ -8,8 +8,8 @@ const Dates = () => {
     {
       category: "Call for Papers",
       dates: [
-    { event: "Abstract Submission Deadline", date: "December 15, 2025", status: "upcoming"  },
-    { event: "Notification of Acceptance", date: "December 22, 2025", status: "upcoming"  },
+    { event: "Abstract Submission Deadline", date: "February 28, 2026", status: "upcoming"  },
+    { event: "Notification of Acceptance", date: "March 7, 2026", status: "upcoming"  },
     { event: "Paper Submission Deadline", date: "February 28, 2026", status: "upcoming"  },
     { event: "Reviewer Feedback", date: "March 16, 2026", status: "upcoming"  },
     { event: "Camera-Ready Paper Submission", date: "April 15, 2026", status: "upcoming"  },
@@ -41,7 +41,7 @@ const Dates = () => {
   const timeline = [
     { month: "Nov 2025", event: "Call for papers opens" },
     { month: "Nov 2025", event: "Registration opens" },
-    { month: "Dec 2025", event: "Abstract deadline" },
+    { month: "Feb 2026", event: "Abstract deadline" },
     { month: "Feb 2026", event: "Full paper deadline" },
     { month: "Mar 2026", event: "Notification & Early bird ends" },
     { month: "Apr 2026", event: "Camera-ready papers" },
