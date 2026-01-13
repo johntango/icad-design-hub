@@ -153,7 +153,7 @@ const CallForPapers = () => {
                   <li>• Focus on novelty and contribution</li>
                   <li>• Technical quality assessment</li>
                   <li>• Relevance to conference themes</li>
-                  <li>• Author notification by March 1</li>
+                  <li>• Author notification by March 16</li>
                 </ul>
               </CardContent>
             </Card>
