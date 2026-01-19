@@ -64,7 +64,7 @@ const CallForPapers = () => {
             Call for Papers open until February 28, 2026
           </h1>
           <a href="https://www.conftool.com/icad2026/" target="_blank" rel="noopener noreferrer" className="text-2xl underline text-primary hover:text-primary/80 mb-6 inline-block">
-            Submit Abstracts and Papers in Conftool here.
+            Submit Abstracts and Papers in Conftool here. Expected length 8-12 pages in Springer Format.
           </a>
           
           {/* PDF Display */}
