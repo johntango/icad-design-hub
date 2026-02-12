@@ -1,4 +1,4 @@
-# Welcome to your Lovable project :-
+# Welcome to your Lovable project :--
 Extension of Abstract Submission updated to February 28
 To move To Github
 In App.tsx change <BrowserRouter> to <HashRouter>
