@@ -45,9 +45,9 @@ const CallForPapers = () => {
   ];
 
   const dates = [
-    { event: "Abstract Deadline Extended to Feb. 28", date: "February 28, 2026" },
-    { event: "Notification of Acceptance", date: "February 28, 2026" },
-    { event: "Paper Submission Deadline", date: "February 28, 2026" },
+    { event: "Abstract Deadline Extended to March 21", date: "March 21, 2026" },
+    { event: "Notification of Acceptance", date: "March 28, 2026" },
+    { event: "Paper Submission Deadline", date: "March 21, 2026" },
     { event: "Reviewer Feedback", date: "March 16, 2026" },
     { event: "Camera-Ready Paper Submission", date: "April 15, 2026" },
     { event: "Note of Final Acceptance", date: "April 30, 2026" },
