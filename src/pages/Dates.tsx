@@ -41,9 +41,8 @@ const Dates = () => {
   const timeline = [
     { month: "Nov 2025", event: "Call for papers opens" },
     { month: "Nov 2025", event: "Registration opens" },
-    { month: "Feb 2026", event: "Abstract deadline" },
-    { month: "Feb 2026", event: "Full paper deadline" },
-    { month: "Mar 2026", event: "Notification & Early bird ends" },
+    { month: "Mar 2026", event: "Abstract & paper submission deadline" },
+    { month: "Mar 2026", event: "Notification of acceptance & reviewer feedback" },
     { month: "Apr 2026", event: "Camera-ready papers" },
     { month: "May 2026", event: "Regular registration ends" },
     { month: "Jun 2026", event: "Conference!" }
