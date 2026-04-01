@@ -171,7 +171,7 @@ const Payment = () => {
         ) : (
           /* Paid Registration Options */
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
               {pricingPlans.map((plan, index) => (
                 <Card 
                   key={index} 
@@ -179,30 +179,29 @@ const Payment = () => {
                     index === 0 ? 'border-primary shadow-hero' : ''
                   }`}
                 >
-                  <CardHeader className="text-center">
+                  <CardHeader className="text-center p-4">
                     <Badge 
-                      className={`w-fit mx-auto mb-4 ${
+                      className={`w-fit mx-auto mb-3 ${
                         index === 0 ? 'bg-primary' : 'bg-muted'
                       }`}
                     >
                       {plan.badge}
                     </Badge>
-                    <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                    <CardTitle className="text-xl">{plan.name}</CardTitle>
                     <div className="flex items-center justify-center space-x-2">
-                      <span className="text-3xl font-bold text-primary">{plan.price}</span>
+                      <span className="text-2xl font-bold text-primary">{plan.price}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">Deadline: {plan.deadline}</p>
+                    <p className="text-xs text-muted-foreground">Deadline: {plan.deadline}</p>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
+                  <CardContent className="p-4 pt-0">
+                    <ul className="space-y-2 mb-4">
                       {plan.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center space-x-2">
-                          <Check className="h-4 w-4 text-primary" />
-                          <span className="text-sm">{feature}</span>
+                          <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                          <span className="text-xs">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    {/* Stripe Buy Button */}
                     <div className="flex justify-center">
                       <div
                         dangerouslySetInnerHTML={{
@@ -216,27 +215,25 @@ const Payment = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
 
-            {/* Conference Dinner */}
-            <div className="max-w-md mx-auto mb-12">
+              {/* Conference Dinner */}
               <Card className="shadow-card hover:shadow-glow transition-smooth">
-                <CardHeader className="text-center">
-                  <Badge className="w-fit mx-auto mb-4 bg-accent">Optional Add-on</Badge>
-                  <CardTitle className="text-2xl">Nam Suh Conference Dinner</CardTitle>
+                <CardHeader className="text-center p-4">
+                  <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
+                  <CardTitle className="text-xl">Nam Suh Conference Dinner</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
-                    <span className="text-3xl font-bold text-primary">$70</span>
+                    <span className="text-2xl font-bold text-primary">$70</span>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
+                <CardContent className="p-4 pt-0">
+                  <ul className="space-y-2 mb-4">
                     <li className="flex items-center space-x-2">
-                      <Check className="h-4 w-4 text-primary" />
-                      <span className="text-sm">Exclusive conference dinner event</span>
+                      <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                      <span className="text-xs">Exclusive conference dinner event</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <Check className="h-4 w-4 text-primary" />
-                      <span className="text-sm">Networking with speakers & attendees</span>
+                      <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                      <span className="text-xs">Networking with speakers & attendees</span>
                     </li>
                   </ul>
                   <div className="flex justify-center">
