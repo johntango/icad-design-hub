@@ -28,7 +28,7 @@ const Payment = () => {
       features: [
         "Full conference access",
         "Welcome reception", 
-        "Coffee breaks & lunch",
+        "Coffee breaks",
         "Conference materials",
         "Certificate of attendance"
       ]
@@ -40,7 +40,7 @@ const Payment = () => {
       badge: "Student ID Required",
       features: [
         "Full conference access",
-        "Coffee breaks & lunch",
+        "Coffee breaks",
         "Conference materials",
         "Student networking session",
         "Certificate of attendance"
