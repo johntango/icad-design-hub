@@ -4,20 +4,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Check, CreditCard, Users, Star, LogIn } from "lucide-react";
-import { useState } from "react";
+import { Check, Users, Star } from "lucide-react";
+import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { useAuth } from "@/components/AuthProvider";
-import { AuthModal } from "@/components/AuthModal";
+
+const STRIPE_PUBLISHABLE_KEY = "pk_live_51HaLhVGgpfLkdZwmLuC9F1kTLNVK9D2c18Jb6P6mkLJD24qE1K7SK9HsLiJBvWOkVPioNlmBHqTYLlHQOvMQxQ6D008p3eXeiM";
 
 const Payment = () => {
   const [registrationType, setRegistrationType] = useState<'interest' | 'paid'>('interest');
   const [loading, setLoading] = useState(false);
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const { toast } = useToast();
-  const { user, signOut } = useAuth();
+
+  useEffect(() => {
+    // Load Stripe Buy Button script
+    const existingScript = document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://js.stripe.com/v3/buy-button.js';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, []);
 
   const pricingPlans = [
     {
@@ -25,6 +33,7 @@ const Payment = () => {
       price: "$600",
       deadline: "May 1, 2026",
       badge: "Standard",
+      buyButtonId: "buy_btn_1THTV3GgpfLkdZwmHTau6h6c",
       features: [
         "Full conference access",
         "Welcome reception", 
@@ -38,6 +47,7 @@ const Payment = () => {
       price: "$200",
       deadline: "May 15, 2026",
       badge: "Student ID Required",
+      buyButtonId: "buy_btn_1THTSxGgpfLkdZwmtJz8hChE",
       features: [
         "Full conference access",
         "Coffee breaks",
@@ -76,7 +86,6 @@ const Payment = () => {
         description: "Thank you for your interest! We'll send you updates about the conference.",
       });
       
-      // Reset form
       (e.target as HTMLFormElement).reset();
       
     } catch (error) {
@@ -91,86 +100,14 @@ const Payment = () => {
     }
   };
 
-  const handlePaidRegistration = async (plan: string) => {
-    if (!user) {
-      setAuthMode('signin');
-      setAuthModalOpen(true);
-      toast({
-        title: "Authentication required",
-        description: "Please sign in to register for the conference.",
-      });
-      return;
-    }
-
-    setLoading(true);
-    
-    try {
-      const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { planType: plan }
-      });
-
-      if (error) {
-        throw error;
-      }
-
-      if (data?.url) {
-        // Open Stripe checkout in a new tab
-        window.open(data.url, '_blank');
-        
-        toast({
-          title: "Redirecting to payment",
-          description: `Opening Stripe checkout for ${plan} registration in a new tab.`,
-        });
-      }
-      
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
-      toast({
-        title: "Checkout failed",
-        description: "Please try again or contact support.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <Layout currentPage="payment">
       <div className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <div className="flex justify-between items-center mb-6">
-            <div className="flex-1">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
-                Registration
-              </h1>
-            </div>
-            <div className="flex items-center gap-4">
-              {user ? (
-                <div className="flex items-center gap-3">
-                  <span className="text-sm text-muted-foreground">
-                    Welcome, {user.email}
-                  </span>
-                  <Button variant="outline" onClick={signOut} size="sm">
-                    Sign Out
-                  </Button>
-                </div>
-              ) : (
-                <Button 
-                  variant="outline" 
-                  onClick={() => {
-                    setAuthMode('signin');
-                    setAuthModalOpen(true);
-                  }}
-                  size="sm"
-                >
-                  <LogIn className="mr-2 h-4 w-4" />
-                  Sign In
-                </Button>
-              )}
-            </div>
-          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
+            Registration
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Secure your spot at the premier AI & UX Design conference. 
             Choose from our flexible registration options.
@@ -234,7 +171,7 @@ const Payment = () => {
         ) : (
           /* Paid Registration Options */
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
               {pricingPlans.map((plan, index) => (
                 <Card 
                   key={index} 
@@ -265,22 +202,24 @@ const Payment = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button 
-                      className="w-full"
-                      variant={index === 0 ? "default" : "outline"}
-                      onClick={() => handlePaidRegistration(plan.name)}
-                      disabled={loading}
-                    >
-                      <CreditCard className="mr-2 h-4 w-4" />
-                      {loading ? "Processing..." : "Register Now"}
-                    </Button>
+                    {/* Stripe Buy Button */}
+                    <div className="flex justify-center">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `<stripe-buy-button
+                            buy-button-id="${plan.buyButtonId}"
+                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                          ></stripe-buy-button>`
+                        }}
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             {/* Additional Information */}
-            <Card className="shadow-card">
+            <Card className="shadow-card max-w-4xl mx-auto">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Star className="mr-2 h-5 w-5 text-primary" />
@@ -313,13 +252,6 @@ const Payment = () => {
             </Card>
           </div>
         )}
-
-        <AuthModal
-          open={authModalOpen}
-          onOpenChange={setAuthModalOpen}
-          mode={authMode}
-          onModeChange={setAuthMode}
-        />
       </div>
     </Layout>
   );
