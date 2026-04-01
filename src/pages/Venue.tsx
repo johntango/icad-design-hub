@@ -134,7 +134,7 @@ const Venue = () => {
             <CardHeader>
               <CardTitle>Conference Hotel Partners</CardTitle>
               <p className="text-muted-foreground">
-                We've secured special rates at these nearby hotels for conference attendees.
+                Estimated rates at these nearby hotels for conference attendees.
               </p>
             </CardHeader>
             <CardContent>
