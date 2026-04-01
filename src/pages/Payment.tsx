@@ -240,8 +240,8 @@ const Payment = () => {
                      <div
                        dangerouslySetInnerHTML={{
                          __html: `<stripe-buy-button
-                           buy-button-id="buy_btn_1THVAJGgpfLkdZwmjZ19ntfc"
-                           publishable-key="pk_test_51HaLhVGgpfLkdZwmHVQcCOdUzwLWqV7umg9EbicemJqLOcLBPDrPtszruyxf4UzqH0lKwaNj5se3tHldNx92nPjI00Zoi8VgBN"
+                           buy-button-id="buy_btn_1THTNKGgpfLkdZwmFoWzz34z"
+                           publishable-key="${STRIPE_PUBLISHABLE_KEY}"
                          ></stripe-buy-button>`
                       }}
                     />
