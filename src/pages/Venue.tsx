@@ -134,7 +134,7 @@ const Venue = () => {
             <CardHeader>
               <CardTitle>Conference Hotel Partners</CardTitle>
               <p className="text-muted-foreground">
-                We've secured special rates at these nearby hotels for conference attendees.
+                Estimated rates at these nearby hotels for conference attendees.
               </p>
             </CardHeader>
             <CardContent>
@@ -145,10 +145,9 @@ const Venue = () => {
                       <h3 className="font-semibold">{hotel.name}</h3>
                       <p className="text-sm text-muted-foreground">{hotel.distance} from venue</p>
                     </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-primary">{hotel.rate}</p>
-                      <p className="text-xs text-muted-foreground">Conference rate</p>
-                    </div>
+                     <div className="text-right">
+                       <p className="font-semibold text-primary">{hotel.rate}</p>
+                     </div>
                   </div>
                 ))}
               </div>
