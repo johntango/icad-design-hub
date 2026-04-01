@@ -253,11 +253,6 @@ const Payment = () => {
                     <CardTitle className="text-2xl">{plan.name}</CardTitle>
                     <div className="flex items-center justify-center space-x-2">
                       <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                      {plan.originalPrice && (
-                        <span className="text-lg text-muted-foreground line-through">
-                          {plan.originalPrice}
-                        </span>
-                      )}
                     </div>
                     <p className="text-sm text-muted-foreground">Deadline: {plan.deadline}</p>
                   </CardHeader>
