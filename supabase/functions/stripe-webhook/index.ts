@@ -85,11 +85,35 @@ serve(async (req) => {
         });
       }
 
-      // Determine registration tier based on amount
-      let subscriptionTier = "Regular";
-      if (amountTotal <= 20000) {
-        subscriptionTier = "Student";
+      // Determine product type based on amount
+      let productType = "Regular";
+      if (amountTotal <= 10000) {
+        productType = "Dinner";
+      } else if (amountTotal <= 25000) {
+        productType = "Student";
       }
+
+      // Insert payment record
+      const { error: paymentError } = await supabaseClient
+        .from("payments")
+        .insert({
+          email: customerEmail,
+          name: customerName,
+          product_type: productType,
+          amount_cents: amountTotal,
+          currency: session.currency || "usd",
+          stripe_session_id: session.id,
+          stripe_payment_intent_id: typeof session.payment_intent === "string"
+            ? session.payment_intent
+            : null,
+        });
+
+      if (paymentError) {
+        logStep("Error inserting payment", { error: paymentError.message });
+        throw paymentError;
+      }
+
+      logStep("Payment recorded", { email: customerEmail, productType, amount: amountTotal });
 
       // Upsert into attendee table
       const { error: attendeeError } = await supabaseClient
@@ -114,28 +138,7 @@ serve(async (req) => {
         throw attendeeError;
       }
 
-      logStep("Attendee record created/updated", { email: customerEmail, tier: subscriptionTier });
-
-      // Also update subscribers table
-      const { error: subscriberError } = await supabaseClient
-        .from("subscribers")
-        .upsert(
-          {
-            email: customerEmail,
-            stripe_customer_id: typeof session.customer === "string" ? session.customer : null,
-            subscribed: true,
-            subscription_tier: subscriptionTier,
-            subscription_end: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
-            updated_at: new Date().toISOString(),
-          },
-          { onConflict: "email" }
-        );
-
-      if (subscriberError) {
-        logStep("Error upserting subscriber", { error: subscriberError.message });
-      } else {
-        logStep("Subscriber record created/updated");
-      }
+      logStep("Attendee record created/updated", { email: customerEmail });
     }
 
     return new Response(JSON.stringify({ received: true }), {
