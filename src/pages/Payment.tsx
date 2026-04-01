@@ -171,7 +171,84 @@ const Payment = () => {
         ) : (
           /* Paid Registration Options */
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              {pricingPlans.map((plan, index) => (
+                <Card 
+                  key={index} 
+                  className={`shadow-card hover:shadow-glow transition-smooth ${
+                    index === 0 ? 'border-primary shadow-hero' : ''
+                  }`}
+                >
+                  <CardHeader className="text-center p-4">
+                    <Badge 
+                      className={`w-fit mx-auto mb-3 ${
+                        index === 0 ? 'bg-primary' : 'bg-muted'
+                      }`}
+                    >
+                      {plan.badge}
+                    </Badge>
+                    <CardTitle className="text-xl">{plan.name}</CardTitle>
+                    <div className="flex items-center justify-center space-x-2">
+                      <span className="text-2xl font-bold text-primary">{plan.price}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Deadline: {plan.deadline}</p>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <ul className="space-y-2 mb-4">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-2">
+                          <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                          <span className="text-xs">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex justify-center">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `<stripe-buy-button
+                            buy-button-id="${plan.buyButtonId}"
+                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                          ></stripe-buy-button>`
+                        }}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+
+              {/* Conference Dinner */}
+              <Card className="shadow-card hover:shadow-glow transition-smooth">
+                <CardHeader className="text-center p-4">
+                  <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
+                  <CardTitle className="text-xl">Nam Suh Conference Dinner</CardTitle>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-2xl font-bold text-primary">$70</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <ul className="space-y-2 mb-4">
+                    <li className="flex items-center space-x-2">
+                      <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                      <span className="text-xs">Exclusive conference dinner event</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                      <span className="text-xs">Networking with speakers & attendees</span>
+                    </li>
+                  </ul>
+                  <div className="flex justify-center">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<stripe-buy-button
+                          buy-button-id="buy_btn_1THTNKGgpfLkdZwmFoWzz34z"
+                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                        ></stripe-buy-button>`
+                      }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
               {pricingPlans.map((plan, index) => (
                 <Card 
                   key={index} 
