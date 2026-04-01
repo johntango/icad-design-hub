@@ -21,22 +21,8 @@ const Payment = () => {
 
   const pricingPlans = [
     {
-      name: "Early Bird",
-      price: "$499",
-      originalPrice: "$599",
-      deadline: "March 1, 2026",
-      badge: "Limited Time",
-      features: [
-        "Full conference access",
-        "Welcome reception",
-        "Coffee breaks & lunch",
-        "Conference materials",
-        "Certificate of attendance"
-      ]
-    },
-    {
       name: "Regular",
-      price: "$599",
+      price: "$600",
       deadline: "May 1, 2026",
       badge: "Standard",
       features: [
@@ -267,11 +253,6 @@ const Payment = () => {
                     <CardTitle className="text-2xl">{plan.name}</CardTitle>
                     <div className="flex items-center justify-center space-x-2">
                       <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                      {plan.originalPrice && (
-                        <span className="text-lg text-muted-foreground line-through">
-                          {plan.originalPrice}
-                        </span>
-                      )}
                     </div>
                     <p className="text-sm text-muted-foreground">Deadline: {plan.deadline}</p>
                   </CardHeader>
