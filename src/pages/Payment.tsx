@@ -28,7 +28,7 @@ const Payment = () => {
       features: [
         "Full conference access",
         "Welcome reception", 
-        "Coffee breaks & lunch",
+        "Coffee breaks",
         "Conference materials",
         "Certificate of attendance"
       ]
