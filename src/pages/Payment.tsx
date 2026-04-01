@@ -21,22 +21,8 @@ const Payment = () => {
 
   const pricingPlans = [
     {
-      name: "Early Bird",
-      price: "$499",
-      originalPrice: "$599",
-      deadline: "March 1, 2026",
-      badge: "Limited Time",
-      features: [
-        "Full conference access",
-        "Welcome reception",
-        "Coffee breaks & lunch",
-        "Conference materials",
-        "Certificate of attendance"
-      ]
-    },
-    {
       name: "Regular",
-      price: "$599",
+      price: "$600",
       deadline: "May 1, 2026",
       badge: "Standard",
       features: [
