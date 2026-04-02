@@ -248,6 +248,26 @@ const Payment = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Test Product */}
+              <Card className="shadow-card hover:shadow-glow transition-smooth">
+                <CardHeader className="text-center p-4">
+                  <Badge className="w-fit mx-auto mb-3 bg-muted">Test</Badge>
+                  <CardTitle className="text-xl">Test Product</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <div className="flex justify-center">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<stripe-buy-button
+                          buy-button-id="buy_btn_1THl5mGgpfLkdZwmgrhhBhH3"
+                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                        ></stripe-buy-button>`
+                      }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Additional Information */}
