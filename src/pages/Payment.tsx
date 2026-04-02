@@ -219,7 +219,7 @@ const Payment = () => {
                 </Card>
               ))}
 
-              {/* Conference Dinner */}
+              {/* Conference Dinner - Gated */}
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
                   <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
@@ -239,16 +239,75 @@ const Payment = () => {
                       <span className="text-xs">Networking with speakers & attendees</span>
                     </li>
                   </ul>
+                  {dinnerUnlocked ? (
                     <div className="flex justify-center">
-                     <div
-                       dangerouslySetInnerHTML={{
-                         __html: `<stripe-buy-button
-                           buy-button-id="buy_btn_1THTNKGgpfLkdZwmFoWzz34z"
-                           publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                         ></stripe-buy-button>`
-                      }}
-                    />
-                  </div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `<stripe-buy-button
+                            buy-button-id="buy_btn_1THTNKGgpfLkdZwmFoWzz34z"
+                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                          ></stripe-buy-button>`
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      <p className="text-xs text-muted-foreground text-center">
+                        Enter the email you used for registration to unlock this add-on.
+                      </p>
+                      <div className="flex gap-2">
+                        <Input
+                          type="email"
+                          placeholder="your@email.com"
+                          value={dinnerEmail}
+                          onChange={(e) => setDinnerEmail(e.target.value)}
+                          className="text-sm"
+                        />
+                        <Button
+                          size="sm"
+                          disabled={checkingDinner || !dinnerEmail}
+                          onClick={async () => {
+                            setCheckingDinner(true);
+                            try {
+                              const { data, error } = await supabase
+                                .from('payments')
+                                .select('id, product_type')
+                                .eq('email', dinnerEmail)
+                                .in('product_type', ['Regular', 'Student'])
+                                .limit(1);
+                              
+                              if (error) throw error;
+                              
+                              if (data && data.length > 0) {
+                                setDinnerUnlocked(true);
+                                toast({
+                                  title: "Registration verified!",
+                                  description: "You can now purchase the conference dinner.",
+                                });
+                              } else {
+                                toast({
+                                  title: "No registration found",
+                                  description: "Please complete your conference registration first.",
+                                  variant: "destructive",
+                                });
+                              }
+                            } catch (err) {
+                              console.error('Error checking registration:', err);
+                              toast({
+                                title: "Error",
+                                description: "Could not verify registration. Please try again.",
+                                variant: "destructive",
+                              });
+                            } finally {
+                              setCheckingDinner(false);
+                            }
+                          }}
+                        >
+                          {checkingDinner ? "..." : "Verify"}
+                        </Button>
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
 
