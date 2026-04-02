@@ -11,12 +11,15 @@ import { useToast } from "@/hooks/use-toast";
 
 const STRIPE_PUBLISHABLE_KEY = "pk_live_51HaLhVGgpfLkdZwmLuC9F1kTLNVK9D2c18Jb6P6mkLJD24qE1K7SK9HsLiJBvWOkVPioNlmBHqTYLlHQOvMQxQ6D008p3eXeiM";
 
+const ADMIN_TEST_EMAIL = 'jrw@mit.edu';
+
 const Payment = () => {
   const [registrationType, setRegistrationType] = useState<'interest' | 'paid'>('interest');
   const [loading, setLoading] = useState(false);
   const [dinnerEmail, setDinnerEmail] = useState('');
   const [dinnerUnlocked, setDinnerUnlocked] = useState(false);
   const [checkingDinner, setCheckingDinner] = useState(false);
+  const [showTestProduct, setShowTestProduct] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -280,6 +283,9 @@ const Payment = () => {
                               
                               if (data && data.length > 0) {
                                 setDinnerUnlocked(true);
+                                if (dinnerEmail.toLowerCase() === ADMIN_TEST_EMAIL) {
+                                  setShowTestProduct(true);
+                                }
                                 toast({
                                   title: "Registration verified!",
                                   description: "You can now purchase the conference dinner.",
@@ -311,25 +317,26 @@ const Payment = () => {
                 </CardContent>
               </Card>
 
-              {/* Test Product */}
-              <Card className="shadow-card hover:shadow-glow transition-smooth">
-                <CardHeader className="text-center p-4">
-                  <Badge className="w-fit mx-auto mb-3 bg-muted">Test</Badge>
-                  <CardTitle className="text-xl">Test Product</CardTitle>
-                </CardHeader>
-                <CardContent className="p-4 pt-0">
-                  <div className="flex justify-center">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<stripe-buy-button
-                          buy-button-id="buy_btn_1THl5mGgpfLkdZwmgrhhBhH3"
-                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                        ></stripe-buy-button>`
-                      }}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+              {showTestProduct && (
+                <Card className="shadow-card hover:shadow-glow transition-smooth">
+                  <CardHeader className="text-center p-4">
+                    <Badge className="w-fit mx-auto mb-3 bg-muted">Test</Badge>
+                    <CardTitle className="text-xl">Test Product</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <div className="flex justify-center">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `<stripe-buy-button
+                            buy-button-id="buy_btn_1THl5mGgpfLkdZwmgrhhBhH3"
+                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                          ></stripe-buy-button>`
+                        }}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* Additional Information */}
