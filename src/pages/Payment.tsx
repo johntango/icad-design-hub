@@ -283,6 +283,9 @@ const Payment = () => {
                               
                               if (data && data.length > 0) {
                                 setDinnerUnlocked(true);
+                                if (dinnerEmail.toLowerCase() === ADMIN_TEST_EMAIL) {
+                                  setShowTestProduct(true);
+                                }
                                 toast({
                                   title: "Registration verified!",
                                   description: "You can now purchase the conference dinner.",
