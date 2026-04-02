@@ -85,12 +85,18 @@ serve(async (req) => {
         });
       }
 
-      // Determine product type based on amount
-      let productType = "Regular";
-      if (amountTotal <= 10000) {
-        productType = "Dinner";
-      } else if (amountTotal <= 25000) {
+      // Determine product type based on exact amount (in cents)
+      let productType = "Unknown";
+      if (amountTotal === 60000) {
+        productType = "Regular";
+      } else if (amountTotal === 20000) {
         productType = "Student";
+      } else if (amountTotal === 7000) {
+        productType = "Dinner";
+      } else if (amountTotal === 100) {
+        productType = "Test";
+      } else {
+        productType = `Other ($${(amountTotal / 100).toFixed(2)})`;
       }
 
       // Insert payment record
