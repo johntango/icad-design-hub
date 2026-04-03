@@ -523,9 +523,10 @@ const Admin = () => {
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Affiliation</TableHead>
+                        <TableHead>Reg Type</TableHead>
+                        <TableHead>Dinner</TableHead>
                         <TableHead>Status</TableHead>
-                        <TableHead>Registration Date</TableHead>
-                        <TableHead>Payment</TableHead>
+                        <TableHead>Date</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -533,7 +534,23 @@ const Admin = () => {
                         <TableRow key={attendee.id}>
                           <TableCell className="font-medium">{attendee.name}</TableCell>
                           <TableCell>{attendee.email}</TableCell>
-                          <TableCell>{attendee.affiliation || 'Not specified'}</TableCell>
+                          <TableCell>{attendee.affiliation || 'N/A'}</TableCell>
+                          <TableCell>
+                            <Badge variant="outline" className={
+                              getRegistrationType(attendee.email) === 'Regular' ? 'text-blue-600 border-blue-600' :
+                              getRegistrationType(attendee.email) === 'Student' ? 'text-purple-600 border-purple-600' :
+                              'text-gray-500'
+                            }>
+                              {getRegistrationType(attendee.email)}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>
+                            {hasDinnerPurchase(attendee.email) ? (
+                              <Badge className="bg-green-600 text-white">Yes</Badge>
+                            ) : (
+                              <Badge variant="outline" className="text-muted-foreground">No</Badge>
+                            )}
+                          </TableCell>
                           <TableCell>
                             <Badge className={`text-white ${getStatusColor(attendee.status)}`}>
                               {attendee.status}
