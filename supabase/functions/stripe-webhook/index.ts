@@ -91,7 +91,7 @@ serve(async (req) => {
         productType = "Regular";
       } else if (amountTotal === 20000) {
         productType = "Student";
-      } else if (amountTotal === 7000) {
+      } else if (amountTotal === 8000) {
         productType = "Dinner";
       } else if (amountTotal === 100) {
         productType = "Test";
