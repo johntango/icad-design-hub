@@ -17,6 +17,7 @@ const Admin = () => {
   const [secretCode, setSecretCode] = useState('');
   const [attendees, setAttendees] = useState<any[]>([]);
   const [interests, setInterests] = useState<any[]>([]);
+  const [payments, setPayments] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [sessionToken, setSessionToken] = useState<string | null>(null);
   const [sessionExpiry, setSessionExpiry] = useState<string | null>(null);
@@ -136,6 +137,7 @@ const Admin = () => {
       } else if (data?.success) {
         setAttendees(data.attendees || []);
         setInterests(data.interests || []);
+        setPayments(data.payments || []);
       } else {
         toast({
           title: "Authentication Error",
@@ -252,6 +254,25 @@ const Admin = () => {
       default:
         return 'bg-gray-500';
     }
+  };
+
+  // Build a map of email -> payment types from the payments table
+  const getPaymentsByEmail = (email: string) => {
+    return payments.filter(p => p.email?.toLowerCase() === email?.toLowerCase());
+  };
+
+  const getRegistrationType = (email: string) => {
+    const userPayments = getPaymentsByEmail(email);
+    const types = userPayments.map(p => p.product_type);
+    if (types.includes('Regular')) return 'Regular';
+    if (types.includes('Student')) return 'Student';
+    if (types.includes('Test')) return 'Test';
+    return 'Unknown';
+  };
+
+  const hasDinnerPurchase = (email: string) => {
+    const userPayments = getPaymentsByEmail(email);
+    return userPayments.some(p => p.product_type === 'Dinner');
   };
 
   const formatDate = (dateString: string) => {
@@ -427,23 +448,40 @@ const Admin = () => {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Interest Registrations</CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Regular Registrations</CardTitle>
+              <UserCheck className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{interests.length}</div>
-              <p className="text-xs text-muted-foreground">Newsletter subscribers</p>
+              <div className="text-2xl font-bold">
+                {attendees.filter(a => getRegistrationType(a.email) === 'Regular').length}
+              </div>
+              <p className="text-xs text-muted-foreground">$600 full registrations</p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Registrations</CardTitle>
+              <CardTitle className="text-sm font-medium">Student Registrations</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{attendees.length + interests.length}</div>
-              <p className="text-xs text-muted-foreground">All registrations</p>
+              <div className="text-2xl font-bold">
+                {attendees.filter(a => getRegistrationType(a.email) === 'Student').length}
+              </div>
+              <p className="text-xs text-muted-foreground">$200 student registrations</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Dinner Purchases</CardTitle>
+              <Users className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">
+                {payments.filter(p => p.product_type === 'Dinner').length}
+              </div>
+              <p className="text-xs text-muted-foreground">Nam Suh Conference Dinner</p>
             </CardContent>
           </Card>
         </div>
@@ -485,9 +523,10 @@ const Admin = () => {
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Affiliation</TableHead>
+                        <TableHead>Reg Type</TableHead>
+                        <TableHead>Dinner</TableHead>
                         <TableHead>Status</TableHead>
-                        <TableHead>Registration Date</TableHead>
-                        <TableHead>Payment</TableHead>
+                        <TableHead>Date</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -495,25 +534,34 @@ const Admin = () => {
                         <TableRow key={attendee.id}>
                           <TableCell className="font-medium">{attendee.name}</TableCell>
                           <TableCell>{attendee.email}</TableCell>
-                          <TableCell>{attendee.affiliation || 'Not specified'}</TableCell>
+                          <TableCell>{attendee.affiliation || 'N/A'}</TableCell>
+                          <TableCell>
+                            <Badge variant="outline" className={
+                              getRegistrationType(attendee.email) === 'Regular' ? 'text-blue-600 border-blue-600' :
+                              getRegistrationType(attendee.email) === 'Student' ? 'text-purple-600 border-purple-600' :
+                              'text-gray-500'
+                            }>
+                              {getRegistrationType(attendee.email)}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>
+                            {hasDinnerPurchase(attendee.email) ? (
+                              <Badge className="bg-green-600 text-white">Yes</Badge>
+                            ) : (
+                              <Badge variant="outline" className="text-muted-foreground">No</Badge>
+                            )}
+                          </TableCell>
                           <TableCell>
                             <Badge className={`text-white ${getStatusColor(attendee.status)}`}>
                               {attendee.status}
                             </Badge>
                           </TableCell>
                           <TableCell>{formatDate(attendee.createdat)}</TableCell>
-                          <TableCell>
-                            {attendee.stripepaymentintentid ? (
-                              <Badge variant="outline" className="text-green-600">Paid</Badge>
-                            ) : (
-                              <Badge variant="outline" className="text-yellow-600">Pending</Badge>
-                            )}
-                          </TableCell>
                         </TableRow>
                       ))}
                       {attendees.length === 0 && (
                         <TableRow>
-                          <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
+                          <TableCell colSpan={7} className="text-center text-muted-foreground py-8">
                             No paid registrations yet
                           </TableCell>
                         </TableRow>
