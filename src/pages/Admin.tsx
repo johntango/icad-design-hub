@@ -464,7 +464,7 @@ const Admin = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                {attendees.filter(a => getRegistrationType(a.email) === 'Student').length}
+                {payments.filter(p => p.product_type === 'Student').length}
               </div>
               <p className="text-xs text-muted-foreground">$200 student registrations</p>
             </CardContent>
