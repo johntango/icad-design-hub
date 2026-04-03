@@ -534,20 +534,10 @@ const Admin = () => {
                           <TableCell>{attendee.email}</TableCell>
                           <TableCell>{attendee.affiliation || 'N/A'}</TableCell>
                           <TableCell>
-                            <Badge variant="outline" className={
-                              getRegistrationType(attendee.email) === 'Regular' ? 'text-blue-600 border-blue-600' :
-                              getRegistrationType(attendee.email) === 'Student' ? 'text-purple-600 border-purple-600' :
-                              'text-gray-500'
-                            }>
-                              {getRegistrationType(attendee.email)}
-                            </Badge>
+                            <span className="font-medium">{getRegistrationAmount(attendee.email)}</span>
                           </TableCell>
                           <TableCell>
-                            {hasDinnerPurchase(attendee.email) ? (
-                              <Badge className="bg-green-600 text-white">Yes</Badge>
-                            ) : (
-                              <Badge variant="outline" className="text-muted-foreground">No</Badge>
-                            )}
+                            <span className="font-medium">{getDinnerAmount(attendee.email)}</span>
                           </TableCell>
                           <TableCell>
                             <Badge className={`text-white ${getStatusColor(attendee.status)}`}>
