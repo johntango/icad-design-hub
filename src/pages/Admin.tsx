@@ -256,6 +256,25 @@ const Admin = () => {
     }
   };
 
+  // Build a map of email -> payment types from the payments table
+  const getPaymentsByEmail = (email: string) => {
+    return payments.filter(p => p.email?.toLowerCase() === email?.toLowerCase());
+  };
+
+  const getRegistrationType = (email: string) => {
+    const userPayments = getPaymentsByEmail(email);
+    const types = userPayments.map(p => p.product_type);
+    if (types.includes('Regular')) return 'Regular';
+    if (types.includes('Student')) return 'Student';
+    if (types.includes('Test')) return 'Test';
+    return 'Unknown';
+  };
+
+  const hasDinnerPurchase = (email: string) => {
+    const userPayments = getPaymentsByEmail(email);
+    return userPayments.some(p => p.product_type === 'Dinner');
+  };
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
