@@ -261,18 +261,16 @@ const Admin = () => {
     return payments.filter(p => p.email?.toLowerCase() === email?.toLowerCase());
   };
 
-  const getRegistrationType = (email: string) => {
+  const getRegistrationAmount = (email: string) => {
     const userPayments = getPaymentsByEmail(email);
-    const types = userPayments.map(p => p.product_type);
-    if (types.includes('Regular')) return 'Regular';
-    if (types.includes('Student')) return 'Student';
-    if (types.includes('Test')) return 'Test';
-    return 'Unknown';
+    const reg = userPayments.find(p => ['Regular', 'Student', 'Test'].includes(p.product_type));
+    return reg ? `$${(reg.amount_cents / 100).toFixed(0)}` : '—';
   };
 
-  const hasDinnerPurchase = (email: string) => {
+  const getDinnerAmount = (email: string) => {
     const userPayments = getPaymentsByEmail(email);
-    return userPayments.some(p => p.product_type === 'Dinner');
+    const dinner = userPayments.find(p => p.product_type === 'Dinner');
+    return dinner ? `$${(dinner.amount_cents / 100).toFixed(0)}` : '—';
   };
 
   const formatDate = (dateString: string) => {
