@@ -247,7 +247,7 @@ const Payment = () => {
                       <div
                         dangerouslySetInnerHTML={{
                           __html: `<stripe-buy-button
-                            buy-button-id="buy_btn_1THTNKGgpfLkdZwmFoWzz34z"
+                            buy-button-id="buy_btn_1TI6qgGgpfLkdZwmw9ZsooYY"
                             publishable-key="${STRIPE_PUBLISHABLE_KEY}"
                           ></stripe-buy-button>`
                         }}
