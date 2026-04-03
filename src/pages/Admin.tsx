@@ -557,18 +557,11 @@ const Admin = () => {
                             </Badge>
                           </TableCell>
                           <TableCell>{formatDate(attendee.createdat)}</TableCell>
-                          <TableCell>
-                            {attendee.stripepaymentintentid ? (
-                              <Badge variant="outline" className="text-green-600">Paid</Badge>
-                            ) : (
-                              <Badge variant="outline" className="text-yellow-600">Pending</Badge>
-                            )}
-                          </TableCell>
                         </TableRow>
                       ))}
                       {attendees.length === 0 && (
                         <TableRow>
-                          <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
+                          <TableCell colSpan={7} className="text-center text-muted-foreground py-8">
                             No paid registrations yet
                           </TableCell>
                         </TableRow>
