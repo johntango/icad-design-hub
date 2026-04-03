@@ -17,6 +17,7 @@ const Admin = () => {
   const [secretCode, setSecretCode] = useState('');
   const [attendees, setAttendees] = useState<any[]>([]);
   const [interests, setInterests] = useState<any[]>([]);
+  const [payments, setPayments] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [sessionToken, setSessionToken] = useState<string | null>(null);
   const [sessionExpiry, setSessionExpiry] = useState<string | null>(null);
