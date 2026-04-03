@@ -261,18 +261,16 @@ const Admin = () => {
     return payments.filter(p => p.email?.toLowerCase() === email?.toLowerCase());
   };
 
-  const getRegistrationType = (email: string) => {
+  const getRegistrationAmount = (email: string) => {
     const userPayments = getPaymentsByEmail(email);
-    const types = userPayments.map(p => p.product_type);
-    if (types.includes('Regular')) return 'Regular';
-    if (types.includes('Student')) return 'Student';
-    if (types.includes('Test')) return 'Test';
-    return 'Unknown';
+    const reg = userPayments.find(p => ['Regular', 'Student', 'Test'].includes(p.product_type));
+    return reg ? `$${(reg.amount_cents / 100).toFixed(0)}` : '—';
   };
 
-  const hasDinnerPurchase = (email: string) => {
+  const getDinnerAmount = (email: string) => {
     const userPayments = getPaymentsByEmail(email);
-    return userPayments.some(p => p.product_type === 'Dinner');
+    const dinner = userPayments.find(p => p.product_type === 'Dinner');
+    return dinner ? `$${(dinner.amount_cents / 100).toFixed(0)}` : '—';
   };
 
   const formatDate = (dateString: string) => {
@@ -453,7 +451,7 @@ const Admin = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                {attendees.filter(a => getRegistrationType(a.email) === 'Regular').length}
+                {payments.filter(p => p.product_type === 'Regular').length}
               </div>
               <p className="text-xs text-muted-foreground">$600 full registrations</p>
             </CardContent>
@@ -466,7 +464,7 @@ const Admin = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                {attendees.filter(a => getRegistrationType(a.email) === 'Student').length}
+                {payments.filter(p => p.product_type === 'Student').length}
               </div>
               <p className="text-xs text-muted-foreground">$200 student registrations</p>
             </CardContent>
@@ -536,20 +534,10 @@ const Admin = () => {
                           <TableCell>{attendee.email}</TableCell>
                           <TableCell>{attendee.affiliation || 'N/A'}</TableCell>
                           <TableCell>
-                            <Badge variant="outline" className={
-                              getRegistrationType(attendee.email) === 'Regular' ? 'text-blue-600 border-blue-600' :
-                              getRegistrationType(attendee.email) === 'Student' ? 'text-purple-600 border-purple-600' :
-                              'text-gray-500'
-                            }>
-                              {getRegistrationType(attendee.email)}
-                            </Badge>
+                            <span className="font-medium">{getRegistrationAmount(attendee.email)}</span>
                           </TableCell>
                           <TableCell>
-                            {hasDinnerPurchase(attendee.email) ? (
-                              <Badge className="bg-green-600 text-white">Yes</Badge>
-                            ) : (
-                              <Badge variant="outline" className="text-muted-foreground">No</Badge>
-                            )}
+                            <span className="font-medium">{getDinnerAmount(attendee.email)}</span>
                           </TableCell>
                           <TableCell>
                             <Badge className={`text-white ${getStatusColor(attendee.status)}`}>
