@@ -64,11 +64,22 @@ Deno.serve(async (req) => {
       console.error('Error fetching interests:', interestError);
     }
 
+    // Fetch payments with elevated privileges (bypasses RLS)
+    const { data: payments, error: paymentError } = await supabaseAdmin
+      .from('payments')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (paymentError) {
+      console.error('Error fetching payments:', paymentError);
+    }
+
     return new Response(
       JSON.stringify({
         success: true,
         attendees: attendees || [],
-        interests: interests || []
+        interests: interests || [],
+        payments: payments || []
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
