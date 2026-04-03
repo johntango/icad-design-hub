@@ -137,6 +137,7 @@ const Admin = () => {
       } else if (data?.success) {
         setAttendees(data.attendees || []);
         setInterests(data.interests || []);
+        setPayments(data.payments || []);
       } else {
         toast({
           title: "Authentication Error",
