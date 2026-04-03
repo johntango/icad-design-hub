@@ -228,7 +228,7 @@ const Payment = () => {
                   <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
                   <CardTitle className="text-xl">Nam Suh Conference Dinner</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
-                    <span className="text-2xl font-bold text-primary">$70</span>
+                    <span className="text-2xl font-bold text-primary">$80</span>
                   </div>
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
