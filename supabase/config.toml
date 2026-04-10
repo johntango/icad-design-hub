@@ -12,5 +12,8 @@ verify_jwt = false
 [functions.clear-attendees]
 verify_jwt = false
 
+[functions.check-dinner-eligibility]
+verify_jwt = false
+
 [functions.stripe-webhook]
 verify_jwt = false
