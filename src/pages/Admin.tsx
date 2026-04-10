@@ -488,6 +488,7 @@ const Admin = () => {
         <Tabs defaultValue="attendees" className="w-full">
           <TabsList>
             <TabsTrigger value="attendees">Paid Attendees ({attendees.length})</TabsTrigger>
+            <TabsTrigger value="payments">All Payments ({payments.length})</TabsTrigger>
             <TabsTrigger value="interests">Interest List ({interests.length})</TabsTrigger>
           </TabsList>
 
@@ -551,6 +552,58 @@ const Admin = () => {
                         <TableRow>
                           <TableCell colSpan={7} className="text-center text-muted-foreground py-8">
                             No paid registrations yet
+                          </TableCell>
+                        </TableRow>
+                      )}
+                    </TableBody>
+                  </Table>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="payments" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle>All Stripe Payments</CardTitle>
+                    <p className="text-muted-foreground">Every individual payment received, including multiple payments from the same person</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="text-center py-8">Loading...</div>
+                ) : (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Type</TableHead>
+                        <TableHead>Amount</TableHead>
+                        <TableHead>Currency</TableHead>
+                        <TableHead>Date</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {payments.map((payment) => (
+                        <TableRow key={payment.id}>
+                          <TableCell className="font-medium">{payment.name || '—'}</TableCell>
+                          <TableCell>{payment.email}</TableCell>
+                          <TableCell>
+                            <Badge variant="outline">{payment.product_type}</Badge>
+                          </TableCell>
+                          <TableCell className="font-medium">${(payment.amount_cents / 100).toFixed(2)}</TableCell>
+                          <TableCell className="uppercase">{payment.currency}</TableCell>
+                          <TableCell>{formatDate(payment.created_at)}</TableCell>
+                        </TableRow>
+                      ))}
+                      {payments.length === 0 && (
+                        <TableRow>
+                          <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
+                            No payments recorded yet
                           </TableCell>
                         </TableRow>
                       )}
