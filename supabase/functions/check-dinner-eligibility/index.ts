@@ -37,6 +37,18 @@ serve(async (req) => {
 
     const normalizedEmail = parsed.data.email.toLowerCase();
 
+    // Admin bypass for testing
+    const ALWAYS_ELIGIBLE_EMAILS = ["jrw@mit.edu"];
+    if (ALWAYS_ELIGIBLE_EMAILS.includes(normalizedEmail)) {
+      return new Response(
+        JSON.stringify({
+          eligible: true,
+          matchedPayment: { id: "admin-bypass", productType: "Admin", amountCents: 0, createdAt: new Date().toISOString() },
+        }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { data, error } = await supabaseClient
       .from("payments")
       .select("id, product_type, amount_cents, created_at")
