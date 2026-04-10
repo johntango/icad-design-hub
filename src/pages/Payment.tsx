@@ -11,23 +11,22 @@ import { useToast } from "@/hooks/use-toast";
 
 const STRIPE_PUBLISHABLE_KEY = "pk_live_51HaLhVGgpfLkdZwmLuC9F1kTLNVK9D2c18Jb6P6mkLJD24qE1K7SK9HsLiJBvWOkVPioNlmBHqTYLlHQOvMQxQ6D008p3eXeiM";
 
-const ADMIN_TEST_EMAIL = 'jrw@mit.edu';
+const ADMIN_TEST_EMAIL = "jrw@mit.edu";
 
 const Payment = () => {
-  const [registrationType, setRegistrationType] = useState<'interest' | 'paid'>('interest');
+  const [registrationType, setRegistrationType] = useState<"interest" | "paid">("interest");
   const [loading, setLoading] = useState(false);
-  const [dinnerEmail, setDinnerEmail] = useState('');
+  const [dinnerEmail, setDinnerEmail] = useState("");
   const [dinnerUnlocked, setDinnerUnlocked] = useState(false);
   const [checkingDinner, setCheckingDinner] = useState(false);
   const [showTestProduct, setShowTestProduct] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
-    // Load Stripe Buy Button script
     const existingScript = document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]');
     if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://js.stripe.com/v3/buy-button.js';
+      const script = document.createElement("script");
+      script.src = "https://js.stripe.com/v3/buy-button.js";
       script.async = true;
       document.head.appendChild(script);
     }
@@ -42,11 +41,11 @@ const Payment = () => {
       buyButtonId: "buy_btn_1THTV3GgpfLkdZwmHTau6h6c",
       features: [
         "Full conference access",
-        "Welcome reception", 
+        "Welcome reception",
         "Coffee breaks",
         "Conference materials",
-        "Certificate of attendance"
-      ]
+        "Certificate of attendance",
+      ],
     },
     {
       name: "Student",
@@ -59,29 +58,29 @@ const Payment = () => {
         "Coffee breaks",
         "Conference materials",
         "Student networking session",
-        "Certificate of attendance"
-      ]
-    }
+        "Certificate of attendance",
+      ],
+    },
   ];
 
   const handleInterestRegistration = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const formData = new FormData(e.target as HTMLFormElement);
-    const email = formData.get('email') as string;
-    const name = formData.get('name') as string;
-    const affiliation = formData.get('affiliation') as string;
-    
+    const email = formData.get("email") as string;
+    const name = formData.get("name") as string;
+    const affiliation = formData.get("affiliation") as string;
+
     try {
-      const { error } = await supabase
-        .from('interest')
-        .insert([{
+      const { error } = await supabase.from("interest").insert([
+        {
           email,
-          name: name || 'Not provided',
+          name: name || "Not provided",
           affiliation: affiliation || null,
-          notes: null
-        }]);
+          notes: null,
+        },
+      ]);
 
       if (error) {
         throw error;
@@ -91,11 +90,10 @@ const Payment = () => {
         title: "Registration successful!",
         description: "Thank you for your interest! We'll send you updates about the conference.",
       });
-      
+
       (e.target as HTMLFormElement).reset();
-      
     } catch (error) {
-      console.error('Error registering interest:', error);
+      console.error("Error registering interest:", error);
       toast({
         title: "Registration failed",
         description: "Please try again or contact support.",
@@ -106,33 +104,74 @@ const Payment = () => {
     }
   };
 
+  const handleDinnerVerification = async () => {
+    const normalizedEmail = dinnerEmail.trim().toLowerCase();
+
+    if (!normalizedEmail) {
+      return;
+    }
+
+    setCheckingDinner(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("check-dinner-eligibility", {
+        body: { email: normalizedEmail },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.eligible) {
+        setDinnerUnlocked(true);
+        setShowTestProduct(normalizedEmail === ADMIN_TEST_EMAIL.toLowerCase());
+        toast({
+          title: "Registration verified!",
+          description: "You can now purchase the conference dinner.",
+        });
+      } else {
+        toast({
+          title: "No registration found",
+          description: "Please complete your conference registration first.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
+      console.error("Error checking registration:", err);
+      toast({
+        title: "Error",
+        description: "Could not verify registration. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setCheckingDinner(false);
+    }
+  };
+
   return (
     <Layout currentPage="payment">
       <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
             Registration
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Secure your spot at the premier AI & UX Design conference. 
-            Choose from our flexible registration options.
+            Secure your spot at the premier AI & UX Design conference. Choose from our flexible registration options.
           </p>
         </div>
 
-        {/* Registration Type Toggle */}
         <div className="flex justify-center mb-12">
           <div className="flex bg-muted rounded-lg p-1">
             <Button
-              variant={registrationType === 'interest' ? "default" : "ghost"}
-              onClick={() => setRegistrationType('interest')}
+              variant={registrationType === "interest" ? "default" : "ghost"}
+              onClick={() => setRegistrationType("interest")}
               className="rounded-md"
             >
               Interest Registration (Free)
             </Button>
             <Button
-              variant={registrationType === 'paid' ? "default" : "ghost"}
-              onClick={() => setRegistrationType('paid')}
+              variant={registrationType === "paid" ? "default" : "ghost"}
+              onClick={() => setRegistrationType("paid")}
               className="rounded-md"
             >
               Full Registration
@@ -140,8 +179,7 @@ const Payment = () => {
           </div>
         </div>
 
-        {registrationType === 'interest' ? (
-          /* Interest Registration Form */
+        {registrationType === "interest" ? (
           <div className="max-w-md mx-auto">
             <Card className="shadow-card">
               <CardHeader className="text-center">
@@ -175,22 +213,15 @@ const Payment = () => {
             </Card>
           </div>
         ) : (
-          /* Paid Registration Options */
           <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
               {pricingPlans.map((plan, index) => (
-                <Card 
-                  key={index} 
-                  className={`shadow-card hover:shadow-glow transition-smooth ${
-                    index === 0 ? 'border-primary shadow-hero' : ''
-                  }`}
+                <Card
+                  key={index}
+                  className={`shadow-card hover:shadow-glow transition-smooth ${index === 0 ? "border-primary shadow-hero" : ""}`}
                 >
                   <CardHeader className="text-center p-4">
-                    <Badge 
-                      className={`w-fit mx-auto mb-3 ${
-                        index === 0 ? 'bg-primary' : 'bg-muted'
-                      }`}
-                    >
+                    <Badge className={`w-fit mx-auto mb-3 ${index === 0 ? "bg-primary" : "bg-muted"}`}>
                       {plan.badge}
                     </Badge>
                     <CardTitle className="text-xl">{plan.name}</CardTitle>
@@ -214,7 +245,7 @@ const Payment = () => {
                           __html: `<stripe-buy-button
                             buy-button-id="${plan.buyButtonId}"
                             publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`
+                          ></stripe-buy-button>`,
                         }}
                       />
                     </div>
@@ -222,7 +253,6 @@ const Payment = () => {
                 </Card>
               ))}
 
-              {/* Conference Dinner - Gated */}
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
                   <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
@@ -249,7 +279,7 @@ const Payment = () => {
                           __html: `<stripe-buy-button
                             buy-button-id="buy_btn_1TI6qgGgpfLkdZwmw9ZsooYY"
                             publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`
+                          ></stripe-buy-button>`,
                         }}
                       />
                     </div>
@@ -268,46 +298,8 @@ const Payment = () => {
                         />
                         <Button
                           size="sm"
-                          disabled={checkingDinner || !dinnerEmail}
-                          onClick={async () => {
-                            setCheckingDinner(true);
-                            try {
-                              const { data, error } = await supabase
-                                .from('payments')
-                                .select('id, product_type')
-                                .ilike('email', dinnerEmail.trim())
-                                .in('product_type', ['Regular', 'Student'])
-                                .limit(1);
-                              
-                              if (error) throw error;
-                              
-                              if (data && data.length > 0) {
-                                setDinnerUnlocked(true);
-                                if (dinnerEmail.toLowerCase() === ADMIN_TEST_EMAIL) {
-                                  setShowTestProduct(true);
-                                }
-                                toast({
-                                  title: "Registration verified!",
-                                  description: "You can now purchase the conference dinner.",
-                                });
-                              } else {
-                                toast({
-                                  title: "No registration found",
-                                  description: "Please complete your conference registration first.",
-                                  variant: "destructive",
-                                });
-                              }
-                            } catch (err) {
-                              console.error('Error checking registration:', err);
-                              toast({
-                                title: "Error",
-                                description: "Could not verify registration. Please try again.",
-                                variant: "destructive",
-                              });
-                            } finally {
-                              setCheckingDinner(false);
-                            }
-                          }}
+                          disabled={checkingDinner || !dinnerEmail.trim()}
+                          onClick={handleDinnerVerification}
                         >
                           {checkingDinner ? "..." : "Verify"}
                         </Button>
@@ -330,7 +322,7 @@ const Payment = () => {
                           __html: `<stripe-buy-button
                             buy-button-id="buy_btn_1THl5mGgpfLkdZwmgrhhBhH3"
                             publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`
+                          ></stripe-buy-button>`,
                         }}
                       />
                     </div>
@@ -339,7 +331,6 @@ const Payment = () => {
               )}
             </div>
 
-            {/* Additional Information */}
             <Card className="shadow-card max-w-4xl mx-auto">
               <CardHeader>
                 <CardTitle className="flex items-center">
