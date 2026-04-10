@@ -275,7 +275,7 @@ const Payment = () => {
                               const { data, error } = await supabase
                                 .from('payments')
                                 .select('id, product_type')
-                                .eq('email', dinnerEmail)
+                                .ilike('email', dinnerEmail.trim())
                                 .in('product_type', ['Regular', 'Student'])
                                 .limit(1);
                               
