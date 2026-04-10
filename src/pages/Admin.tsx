@@ -326,6 +326,40 @@ const Admin = () => {
     });
   };
 
+  const downloadPaymentsCSV = () => {
+    const headers = ['Name', 'Email', 'Product_type', 'Amount_cents', 'Currency', 'Created_at', 'Stripe_payment_intent_id', 'Stripe_session_id'];
+    const csvContent = [
+      ['Name', 'Email', 'Product Type', 'Amount', 'Currency', 'Date', 'Payment Intent ID', 'Session ID'].join(','),
+      ...payments.map(row =>
+        [
+          row.name || '',
+          row.email,
+          row.product_type,
+          `$${(row.amount_cents / 100).toFixed(2)}`,
+          row.currency,
+          row.created_at,
+          row.stripe_payment_intent_id || '',
+          row.stripe_session_id || '',
+        ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')
+      )
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'all-payments.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    toast({
+      title: "Download started",
+      description: "All payments exported to CSV",
+    });
+  };
+
   const clearAttendees = async () => {
     if (!confirm('Are you sure you want to clear all test attendees? This cannot be undone.')) {
       return;
@@ -570,6 +604,10 @@ const Admin = () => {
                     <CardTitle>All Stripe Payments</CardTitle>
                     <p className="text-muted-foreground">Every individual payment received, including multiple payments from the same person</p>
                   </div>
+                  <Button onClick={downloadPaymentsCSV} variant="outline" size="sm">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download CSV
+                  </Button>
                 </div>
               </CardHeader>
               <CardContent>
