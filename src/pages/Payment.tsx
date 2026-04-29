@@ -220,7 +220,7 @@ const Payment = () => {
                   <Badge className="w-fit mx-auto mb-3 bg-muted">Student ID Required</Badge>
                   <CardTitle className="text-xl">Student Product</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
-                    <span className="text-2xl font-bold text-primary">$200</span>
+                    <span className="text-2xl font-bold text-primary">$280</span>
                   </div>
                   <p className="text-xs text-muted-foreground">Deadline: May 17, 2026</p>
                 </CardHeader>
@@ -243,7 +243,7 @@ const Payment = () => {
                   <Badge className="w-fit mx-auto mb-3 bg-muted">Standard</Badge>
                   <CardTitle className="text-xl">Regular Attendee</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
-                    <span className="text-2xl font-bold text-primary">$600</span>
+                    <span className="text-2xl font-bold text-primary">$680</span>
                   </div>
                   <p className="text-xs text-muted-foreground">Deadline: May 17, 2026</p>
                 </CardHeader>
