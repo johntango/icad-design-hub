@@ -8,10 +8,10 @@ const Dates = () => {
     {
       category: "Call for Papers",
       dates: [
-    { event: "Abstract Submission Deadline", date: "March 21, 2026", status: "upcoming"  },
-    { event: "Notification of Acceptance", date: "March 28, 2026", status: "upcoming"  },
-    { event: "Paper Submission Deadline", date: "March 21, 2026", status: "upcoming"  },
-    { event: "Reviewer Feedback", date: "April 27, 2026", status: "upcoming"  },
+    { event: "Abstract Submission Deadline", date: "March 21, 2026", status: "past"  },
+    { event: "Notification of Acceptance", date: "March 28, 2026", status: "past"  },
+    { event: "Paper Submission Deadline", date: "March 21, 2026", status: "past"  },
+    { event: "Reviewer Feedback", date: "April 27, 2026", status: "past"  },
     { event: "Camera-Ready Paper Submission", date: "May 11, 2026", status: "upcoming"  },
     { event: "Note of Final Acceptance", date: "April 30, 2026", status: "upcoming"  },
     { event: "Conference Dates", date: "June 24-25, 2026", status: "upcoming"  }
@@ -20,8 +20,8 @@ const Dates = () => {
     {
       category: "Registration",
       dates: [
-        { event: "Early Bird Registration Opens", date: "January 10, 2026", status: "upcoming" },
-        { event: "Early Bird Deadline", date: "March 1, 2026", status: "upcoming" },
+        { event: "Early Bird Registration Opens", date: "January 10, 2026", status: "past" },
+        { event: "Early Bird Deadline", date: "March 1, 2026", status: "past" },
         { event: "Regular Registration Deadline", date: "May 1, 2026", status: "future" },
         { event: "Student Registration Deadline", date: "May 15, 2026", status: "future" },
         { event: "On-site Registration", date: "June 24, 2026", status: "future" }
