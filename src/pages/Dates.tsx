@@ -29,10 +29,10 @@ const Dates = () => {
     {
       category: "Conference Events",
       dates: [
-        { event: "Pre-Conference Workshops", date: "June 23, 2026", status: "future" },
-        { event: "Main Conference Day 1", date: "June 24, 2026", status: "future" },
-        { event: "Main Conference Day 2", date: "June 25, 2026", status: "future" },
-        { event: "Post-Conference Events", date: "June 26, 2026", status: "future" }
+        { event: "Pre-Conference Workshops", date: "June 23, 2026", status: "upcoming" },
+        { event: "Main Conference Day 1", date: "June 24, 2026", status: "upcoming" },
+        { event: "Main Conference Day 2", date: "June 25, 2026", status: "upcoming" },
+        { event: "Post-Conference Events", date: "June 26, 2026", status: "upcoming" }
       ]
     }
   ];
