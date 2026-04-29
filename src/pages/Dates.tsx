@@ -22,9 +22,8 @@ const Dates = () => {
       dates: [
         { event: "Early Bird Registration Opens", date: "January 10, 2026", status: "past" },
         { event: "Early Bird Deadline", date: "March 1, 2026", status: "past" },
-        { event: "Regular Registration Deadline", date: "May 1, 2026", status: "future" },
-        { event: "Student Registration Deadline", date: "May 15, 2026", status: "future" },
-        { event: "On-site Registration", date: "June 24, 2026", status: "future" }
+        { event: "Regular Registration Deadline", date: "May 17, 2026", status: "future" },
+        { event: "Student Registration Deadline", date: "May 17, 2026", status: "future" }
       ]
     },
     {
