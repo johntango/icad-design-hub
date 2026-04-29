@@ -217,8 +217,12 @@ const Payment = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
-                  <Badge className="w-fit mx-auto mb-3 bg-muted">Add-on</Badge>
+                  <Badge className="w-fit mx-auto mb-3 bg-muted">Student ID Required</Badge>
                   <CardTitle className="text-xl">Student Product</CardTitle>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-2xl font-bold text-primary">$200</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">Deadline: May 17, 2026</p>
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <div className="flex justify-center">
@@ -236,8 +240,12 @@ const Payment = () => {
 
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
-                  <Badge className="w-fit mx-auto mb-3 bg-muted">Add-on</Badge>
+                  <Badge className="w-fit mx-auto mb-3 bg-muted">Standard</Badge>
                   <CardTitle className="text-xl">Regular Attendee</CardTitle>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-2xl font-bold text-primary">$600</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">Deadline: May 17, 2026</p>
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <div className="flex justify-center">
