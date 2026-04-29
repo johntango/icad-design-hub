@@ -11,8 +11,8 @@ const Dates = () => {
     { event: "Abstract Submission Deadline", date: "March 21, 2026", status: "upcoming"  },
     { event: "Notification of Acceptance", date: "March 28, 2026", status: "upcoming"  },
     { event: "Paper Submission Deadline", date: "March 21, 2026", status: "upcoming"  },
-    { event: "Reviewer Feedback", date: "March 28, 2026", status: "upcoming"  },
-    { event: "Camera-Ready Paper Submission", date: "April 15, 2026", status: "upcoming"  },
+    { event: "Reviewer Feedback", date: "April 27, 2026", status: "upcoming"  },
+    { event: "Camera-Ready Paper Submission", date: "May 11, 2026", status: "upcoming"  },
     { event: "Note of Final Acceptance", date: "April 30, 2026", status: "upcoming"  },
     { event: "Conference Dates", date: "June 24-25, 2026", status: "upcoming"  }
   ]
