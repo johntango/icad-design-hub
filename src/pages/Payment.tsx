@@ -215,6 +215,44 @@ const Payment = () => {
         ) : (
           <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              <Card className="shadow-card hover:shadow-glow transition-smooth">
+                <CardHeader className="text-center p-4">
+                  <Badge className="w-fit mx-auto mb-3 bg-muted">Add-on</Badge>
+                  <CardTitle className="text-xl">Additional Product</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <div className="flex justify-center">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<stripe-buy-button
+                          buy-button-id="buy_btn_1TRYrXGgpfLkdZwmjAUbrCMf"
+                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                        ></stripe-buy-button>`,
+                      }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-card hover:shadow-glow transition-smooth">
+                <CardHeader className="text-center p-4">
+                  <Badge className="w-fit mx-auto mb-3 bg-muted">Add-on</Badge>
+                  <CardTitle className="text-xl">Additional Product</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <div className="flex justify-center">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<stripe-buy-button
+                          buy-button-id="buy_btn_1TRYv5GgpfLkdZwmwXxgU3X7"
+                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                        ></stripe-buy-button>`,
+                      }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
               {pricingPlans.map((plan, index) => (
                 <Card
                   key={index}
