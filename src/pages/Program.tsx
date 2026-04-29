@@ -118,7 +118,20 @@ const Program = () => {
 
         {/* Program Overview */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="shadow-card">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Badge className="mr-3 bg-accent">Pre-Conference</Badge>
+                  June 23, 2026
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm">
+                  <li>• Doctoral Student Workshop</li>
+                </ul>
+              </CardContent>
+            </Card>
             <Card className="shadow-card">
               <CardHeader>
                 <CardTitle className="flex items-center">
