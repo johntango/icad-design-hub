@@ -66,7 +66,7 @@ const Dates = () => {
       case 'upcoming':
         return <Badge className="bg-orange-100 text-orange-800 text-xs">Upcoming</Badge>;
       default:
-        return <Badge variant="outline" className="text-xs">Future</Badge>;
+        return <Badge variant="outline" className="text-xs">Past</Badge>;
     }
   };
 
