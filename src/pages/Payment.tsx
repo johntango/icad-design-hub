@@ -264,10 +264,10 @@ const Payment = () => {
               {pricingPlans.map((plan, index) => (
                 <Card
                   key={index}
-                  className={`shadow-card hover:shadow-glow transition-smooth ${index === 0 ? "border-primary shadow-hero" : ""}`}
+                  className="shadow-card hover:shadow-glow transition-smooth"
                 >
                   <CardHeader className="text-center p-4">
-                    <Badge className={`w-fit mx-auto mb-3 ${index === 0 ? "bg-primary" : "bg-muted"}`}>
+                    <Badge className="w-fit mx-auto mb-3 bg-muted">
                       {plan.badge}
                     </Badge>
                     <CardTitle className="text-xl">{plan.name}</CardTitle>
