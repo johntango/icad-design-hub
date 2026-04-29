@@ -36,7 +36,7 @@ const Payment = () => {
     {
       name: "Regular",
       price: "$600",
-      deadline: "May 1, 2026",
+      deadline: "May 17, 2026",
       badge: "Standard",
       buyButtonId: "buy_btn_1THTV3GgpfLkdZwmHTau6h6c",
       features: [
@@ -269,14 +269,6 @@ const Payment = () => {
                     <p className="text-xs text-muted-foreground">Deadline: {plan.deadline}</p>
                   </CardHeader>
                   <CardContent className="p-4 pt-0">
-                    <ul className="space-y-2 mb-4">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center space-x-2">
-                          <Check className="h-3 w-3 text-primary flex-shrink-0" />
-                          <span className="text-xs">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
                     <div className="flex justify-center">
                       <div
                         dangerouslySetInnerHTML={{
