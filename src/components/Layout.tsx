@@ -39,6 +39,7 @@ const Layout = ({ children, currentPage }: LayoutProps) => {
                 <li><a href="/call-for-papers" className="text-primary hover:underline">Submit Papers</a></li>
                 <li><a href="/payment" className="text-primary hover:underline">Register Now</a></li>
                 <li><a href="/venue" className="text-primary hover:underline">Venue Info</a></li>
+                <li><a href="/privacy" className="text-primary hover:underline">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
