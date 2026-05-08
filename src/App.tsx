@@ -16,6 +16,7 @@ import Dates from "./pages/Dates";
 import Visa from "./pages/Visa";
 import Admin from "./pages/Admin";
 import RegisterInterest from "./pages/RegisterInterest";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
