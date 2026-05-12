@@ -72,8 +72,16 @@ serve(async (req) => {
       apiVersion: "2023-10-16" 
     });
 
-    // Retrieve the checkout session
-    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    // Retrieve the checkout session along with purchased line items
+    const session = await stripe.checkout.sessions.retrieve(sessionId, {
+      expand: ["line_items", "line_items.data.price.product"],
+    });
+    const lineItems = (session as any).line_items?.data || [];
+    const productNames: string[] = lineItems.map((li: any) => {
+      const prod = li.price?.product;
+      return (prod && typeof prod === "object" && prod.name) || li.description || "Item";
+    });
+    const productSummary = productNames.join(" + ") || "Conference Registration";
     logStep("Retrieved Stripe session", { 
       status: session.payment_status, 
       customerEmail: session.customer_email 
@@ -164,7 +172,8 @@ serve(async (req) => {
 
     return new Response(JSON.stringify({ 
       success: true,
-      tier: subscriptionTier,
+      tier: productSummary,
+      products: productNames,
       email: customerEmail,
       name: session.customer_details?.name || null,
       amount_cents: session.amount_total || 0,
