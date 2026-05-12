@@ -201,8 +201,8 @@ const PaymentSuccess = () => {
                     placeholder="Enter the name for this receipt"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="receipt-affiliation">Affiliation (optional)</Label>
+                <div className={affiliation ? "" : "no-print"}>
+                  <Label htmlFor="receipt-affiliation">Affiliation</Label>
                   <Input
                     id="receipt-affiliation"
                     value={affiliation}
