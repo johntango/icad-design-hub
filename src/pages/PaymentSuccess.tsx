@@ -31,6 +31,23 @@ const PaymentSuccess = () => {
 
   useEffect(() => {
     const verifyPayment = async () => {
+      if (searchParams.get("demo") === "1") {
+        const demo: Receipt = {
+          tier: "Regular",
+          email: "attendee@example.com",
+          name: "Jane Doe",
+          amount_cents: 60000,
+          currency: "usd",
+          session_id: "cs_test_demo_123",
+          payment_intent: "pi_test_demo_123",
+          paid_at: new Date().toISOString(),
+        };
+        setPaymentVerified(true);
+        setReceipt(demo);
+        setName(demo.name || "");
+        setLoading(false);
+        return;
+      }
       const sessionId = searchParams.get("session_id");
       if (!sessionId) {
         setLoading(false);
