@@ -172,7 +172,8 @@ serve(async (req) => {
 
     return new Response(JSON.stringify({ 
       success: true,
-      tier: subscriptionTier,
+      tier: productSummary,
+      products: productNames,
       email: customerEmail,
       name: session.customer_details?.name || null,
       amount_cents: session.amount_total || 0,
