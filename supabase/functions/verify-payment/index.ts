@@ -165,7 +165,13 @@ serve(async (req) => {
     return new Response(JSON.stringify({ 
       success: true,
       tier: subscriptionTier,
-      email: customerEmail
+      email: customerEmail,
+      name: session.customer_details?.name || null,
+      amount_cents: session.amount_total || 0,
+      currency: session.currency || 'usd',
+      session_id: sessionId,
+      payment_intent: typeof session.payment_intent === 'string' ? session.payment_intent : null,
+      paid_at: new Date().toISOString(),
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
