@@ -41,7 +41,7 @@ const Layout = ({ children, currentPage }: LayoutProps) => {
                 <li><a href="/payment" className="text-primary hover:underline">Register Now</a></li>
                 <li><a href="/venue" className="text-primary hover:underline">Venue Info</a></li>
                 <li><a href="/privacy" className="text-primary hover:underline">Privacy Policy</a></li>
-                <li><a href={suhWorkshop1992} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Suh Workshop on Design (1992)</a></li>
+                <li><a href={suhWorkshop1992} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Nam Suh's Workshop on Design ADAM Research @ MIT 1992</a></li>
               </ul>
             </div>
           </div>
