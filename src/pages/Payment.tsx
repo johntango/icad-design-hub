@@ -35,7 +35,7 @@ const Payment = () => {
   const pricingPlans = [
     {
       name: "Regular",
-      price: "$600",
+      price: "Conference Daytime Events only",
       deadline: "May 17, 2026",
       badge: "Standard",
       buyButtonId: "buy_btn_1THTV3GgpfLkdZwmHTau6h6c",
