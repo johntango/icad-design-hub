@@ -241,7 +241,7 @@ const Payment = () => {
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
                   <Badge className="w-fit mx-auto mb-3 bg-muted">Standard</Badge>
-                  <CardTitle className="text-xl">Regular Attendee</CardTitle>
+                  <CardTitle className="text-xl">Regular Attendee all Events</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-2xl font-bold text-primary">$680</span>
                   </div>
