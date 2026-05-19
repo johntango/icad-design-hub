@@ -310,40 +310,16 @@ const Payment = () => {
                       <span className="text-xs">Networking with speakers & attendees</span>
                     </li>
                   </ul>
-                  {dinnerUnlocked ? (
-                    <div className="flex justify-center">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: `<stripe-buy-button
-                            buy-button-id="buy_btn_1TI6qgGgpfLkdZwmw9ZsooYY"
-                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`,
-                        }}
-                      />
-                    </div>
-                  ) : (
-                    <div className="space-y-3">
-                      <p className="text-xs text-muted-foreground text-center">
-                        Enter the email you used for registration to unlock this add-on.
-                      </p>
-                      <div className="flex gap-2">
-                        <Input
-                          type="email"
-                          placeholder="your@email.com"
-                          value={dinnerEmail}
-                          onChange={(e) => setDinnerEmail(e.target.value)}
-                          className="text-sm"
-                        />
-                        <Button
-                          size="sm"
-                          disabled={checkingDinner || !dinnerEmail.trim()}
-                          onClick={handleDinnerVerification}
-                        >
-                          {checkingDinner ? "..." : "Verify"}
-                        </Button>
-                      </div>
-                    </div>
-                  )}
+                  <div className="flex justify-center">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<stripe-buy-button
+                          buy-button-id="buy_btn_1TI6qgGgpfLkdZwmw9ZsooYY"
+                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
+                        ></stripe-buy-button>`,
+                      }}
+                    />
+                  </div>
                 </CardContent>
               </Card>
 
