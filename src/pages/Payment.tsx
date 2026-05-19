@@ -14,7 +14,7 @@ const STRIPE_PUBLISHABLE_KEY = "pk_live_51HaLhVGgpfLkdZwmLuC9F1kTLNVK9D2c18Jb6P6
 const ADMIN_TEST_EMAIL = "jrw@mit.edu";
 
 const Payment = () => {
-  const [registrationType, setRegistrationType] = useState<"interest" | "paid">("interest");
+  const [registrationType, setRegistrationType] = useState<"interest" | "paid">("paid");
   const [loading, setLoading] = useState(false);
   const [dinnerEmail, setDinnerEmail] = useState("");
   const [dinnerUnlocked, setDinnerUnlocked] = useState(false);
