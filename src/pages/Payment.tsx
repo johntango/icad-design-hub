@@ -294,10 +294,11 @@ const Payment = () => {
               <Card className="shadow-card hover:shadow-glow transition-smooth">
                 <CardHeader className="text-center p-4">
                   <Badge className="w-fit mx-auto mb-3 bg-accent">Optional Add-on</Badge>
-                  <CardTitle className="text-xl">Nam Suh Conference Dinner</CardTitle>
+                  <CardTitle className="text-xl">Nam P. Suh Conference Dinner</CardTitle>
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-2xl font-bold text-primary">$80</span>
                   </div>
+                  <p className="text-xs text-muted-foreground">MIT Samberg Center, 6pm June 24, 2026</p>
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <ul className="space-y-2 mb-4">

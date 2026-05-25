@@ -67,6 +67,12 @@ const Program = () => {
         "Trust in AI Design Assistants",
         "Designing for Human-AI Teams"
       ]
+    },
+    {
+      time: "18:00 - 20:00",
+      title: "Nam P. Suh Conference Dinner",
+      type: "break",
+      location: "MIT Samberg Center"
     }
   ];
 
