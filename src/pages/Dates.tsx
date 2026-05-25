@@ -31,6 +31,7 @@ const Dates = () => {
       dates: [
         { event: "Pre-Conference Workshops", date: "June 23, 2026", status: "upcoming" },
         { event: "Main Conference Day 1", date: "June 24, 2026", status: "upcoming" },
+        { event: "Nam P. Suh Conference Dinner", date: "June 24, 2026 @ 6pm", status: "upcoming" },
         { event: "Main Conference Day 2", date: "June 25, 2026", status: "upcoming" },
         { event: "Post-Conference Events", date: "June 26, 2026", status: "upcoming" }
       ]
