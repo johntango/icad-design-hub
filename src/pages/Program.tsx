@@ -40,7 +40,7 @@ const Program = () => {
     { time: "16:25 - 16:42", title: "AI-Driven Axiomatic Design for Product Configuration in the Context of Industry 5.0", speaker: "George Drăghici", authors: "Gabriel Sirbu, George Drăghici, Adrian Ciprian Firu", type: "session", location: "Main Auditorium" },
     { time: "16:42 - 16:59", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
 
-    { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "break", location: "MIT Samberg Center" }
+    { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "dinner", location: "MIT Samberg Center" }
   ];
 
   const day2Schedule: ScheduleItem[] = [
