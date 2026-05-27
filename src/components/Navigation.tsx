@@ -86,13 +86,22 @@ const Navigation = ({ currentPage }: NavigationProps) => {
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
-                  variant={currentPage === item.id ? "default" : "outline"}
+                  variant={item.highlight ? "default" : currentPage === item.id ? "default" : "outline"}
                   size="sm"
-                  asChild
-                  className="w-full justify-start transition-smooth"
-                  onClick={() => setIsMenuOpen(false)}
+                  asChild={!item.disabled}
+                  disabled={item.disabled}
+                  className={cn(
+                    "w-full justify-start transition-smooth",
+                    item.disabled && "opacity-50 cursor-not-allowed",
+                    item.highlight && "ring-2 ring-primary ring-offset-1 font-semibold"
+                  )}
+                  onClick={() => !item.disabled && setIsMenuOpen(false)}
                 >
-                  <NavLink to={item.href}>{item.label}</NavLink>
+                  {item.disabled ? (
+                    <span>{item.label}</span>
+                  ) : (
+                    <NavLink to={item.href}>{item.label}</NavLink>
+                  )}
                 </Button>
               ))}
             </div>
