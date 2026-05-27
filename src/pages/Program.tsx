@@ -222,6 +222,46 @@ const Program = () => {
           </div>
         </section>
 
+        {/* Day 2 Schedule */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8">Day 2 - June 25, 2026</h2>
+          <div className="space-y-4">
+            {day2Schedule.map((item, index) => (
+              <Card key={index} className="shadow-card">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <Badge className={getTypeColor(item.type)}>
+                          {item.time}
+                        </Badge>
+                        <Badge variant="outline">
+                          <MapPin className="h-3 w-3 mr-1" />
+                          {item.location}
+                        </Badge>
+                      </div>
+                      <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                      {item.speaker && (
+                        <p className="text-primary font-medium">
+                          <User className="h-4 w-4 inline mr-1" />
+                          {item.speaker}
+                          {item.affiliation && <span className="text-muted-foreground"> - {item.affiliation}</span>}
+                        </p>
+                      )}
+                      {item.authors && (
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {item.authors}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+
         {/* Workshops */}
         <section>
           <h2 className="text-3xl font-bold mb-8">Pre-Conference Workshops</h2>
