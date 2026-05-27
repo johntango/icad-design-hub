@@ -105,7 +105,7 @@ const Program = () => {
 
         {/* Program Overview */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-md mx-auto">
             <Card className="shadow-card">
               <CardHeader>
                 <CardTitle className="flex items-center">
