@@ -13,13 +13,13 @@ const Navigation = ({ currentPage }: NavigationProps) => {
 
   const navigationItems = [
     { id: "home", label: "Home", href: "/" },
-    { id: "committee", label: "Committee", href: "/committee" },
-    { id: "call-for-papers", label: "Call for Papers", href: "/call-for-papers" },
-    { id: "venue", label: "Venue", href: "/venue" },
     { id: "program", label: "Program", href: "/program" },
+    { id: "committee", label: "Committee", href: "/committee" },
+    { id: "call-for-papers", label: "Call for Papers", href: "/call-for-papers", disabled: true },
+    { id: "venue", label: "Venue", href: "/venue" },
     { id: "visa", label: "Visa", href: "/visa" },
     { id: "dates", label: "Dates", href: "/dates" },
-    { id: "payment", label: "Registration", href: "/payment" },
+    { id: "payment", label: "Registration", href: "/payment", highlight: true },
     { id: "admin", label: "Admin", href: "/admin" },
   ];
 
