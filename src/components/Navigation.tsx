@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavLink } from "react-router-dom"; // ✅ use React Router navigation
+import { cn } from "@/lib/utils";
 
 interface NavigationProps {
   currentPage: string;
