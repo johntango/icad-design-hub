@@ -142,7 +142,7 @@ const Program = () => {
           </div>
           <div className="space-y-4">
             {day1Schedule.map((item, index) => (
-              <Card key={index} className="shadow-card">
+              <Card key={index} className={`shadow-card ${getCardHighlight(item.type)}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
@@ -192,7 +192,7 @@ const Program = () => {
           </div>
           <div className="space-y-4">
             {day2Schedule.map((item, index) => (
-              <Card key={index} className="shadow-card">
+              <Card key={index} className={`shadow-card ${getCardHighlight(item.type)}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
