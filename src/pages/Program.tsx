@@ -120,38 +120,6 @@ const Program = () => {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Badge className="mr-3 bg-primary">Day 1</Badge>
-                  June 24, 2026
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li>• Keynote presentations</li>
-                  <li>• Research paper sessions</li>
-                  <li>• Poster presentations</li>
-                  <li>• Welcome reception</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Badge className="mr-3 bg-secondary">Day 2</Badge>
-                  June 25, 2026
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li>• Industry presentations</li>
-                  <li>• Hands-on workshops</li>
-                  <li>• Panel discussions</li>
-                  <li>• Closing ceremony</li>
-                </ul>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
