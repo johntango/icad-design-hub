@@ -6,7 +6,7 @@ import { Clock, MapPin, User } from "lucide-react";
 const Program = () => {
   type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; authors?: string; affiliation?: string; papers?: string[] };
   const day1Schedule: ScheduleItem[] = [
-    { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Main Lobby" },
+    { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Samberg Center 7th floor" },
 
     { time: "9:00 - 9:17", title: "Axiomatic Design–Based Sustainability Evaluation in Manufacturing: An Energy Monitoring Case Study in a Human–Robot Collaborative Workstation", speaker: "Asja Emer", authors: "Asja Emer, Amberlynn Bonello, Chiara Nezzi, Emmanuel Francalanza, Erwin Rauch, Dominik Matt", type: "session", location: "Main Auditorium" },
     { time: "9:17 - 9:34", title: "Axiomatic Design Foundations for AI-Driven Collective System Design", speaker: "David Cochran", authors: "David Cochran", type: "session", location: "Main Auditorium" },
@@ -43,7 +43,7 @@ const Program = () => {
   ];
 
   const day2Schedule: ScheduleItem[] = [
-    { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Main Lobby" },
+    { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Samberg Center 7th floor" },
 
     { time: "9:00 - 9:17", title: "Axiomatic Design (AD) and Organization Design: Opportunities and Challenges in Transferring AD to the Social Sciences", speaker: "Nicolay Worren", authors: "Nicolay Worren", type: "session", location: "Main Auditorium" },
     { time: "9:17 - 9:34", title: "A Deep Dive into Axiomatic Design – Part I: Problem Formulation", speaker: "Aydin Homay", authors: "Aydin Homay", type: "session", location: "Main Auditorium" },
