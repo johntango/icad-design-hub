@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, User } from "lucide-react";
+import aiLady from "@/assets/ai-lady.png";
 
 const Program = () => {
   type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; authors?: string; affiliation?: string; papers?: string[] };
@@ -97,10 +98,15 @@ const Program = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-hero bg-clip-text text-transparent">
             Conference Program
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Two days packed with keynotes, research presentations, workshops, 
             and networking opportunities at the forefront of AI and design.
           </p>
+          <img
+            src={aiLady}
+            alt="AI Lady"
+            className="mx-auto rounded-2xl shadow-lg max-w-md w-full"
+          />
         </div>
 
         {/* Program Overview */}
