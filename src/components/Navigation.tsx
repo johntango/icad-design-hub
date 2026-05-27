@@ -45,12 +45,21 @@ const Navigation = ({ currentPage }: NavigationProps) => {
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
-                  variant={currentPage === item.id ? "default" : "outline"}
+                  variant={item.highlight ? "default" : currentPage === item.id ? "default" : "outline"}
                   size="sm"
-                  asChild
-                  className="transition-smooth"
+                  asChild={!item.disabled}
+                  disabled={item.disabled}
+                  className={cn(
+                    "transition-smooth",
+                    item.disabled && "opacity-50 cursor-not-allowed",
+                    item.highlight && "ring-2 ring-primary ring-offset-1 font-semibold"
+                  )}
                 >
-                  <NavLink to={item.href}>{item.label}</NavLink>
+                  {item.disabled ? (
+                    <span>{item.label}</span>
+                  ) : (
+                    <NavLink to={item.href}>{item.label}</NavLink>
+                  )}
                 </Button>
               ))}
               <ThemeToggle />
