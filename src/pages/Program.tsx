@@ -77,26 +77,6 @@ const Program = () => {
     { time: "16:42 - 16:59", title: "Simple Axiomatic Design Description Language", speaker: "Chloe Alex Schaff", authors: "Chloe Alex Schaff, Joseph Timothy Foley, Kristinn Rúnar Rúnarsson", type: "session", location: "Main Auditorium" }
   ];
 
-  const workshops = [
-    {
-      title: "Hands-on AI Design Tools",
-      instructor: "Dr. Sarah Chen",
-      duration: "3 hours",
-      description: "Learn to use cutting-edge AI tools for design automation and enhancement."
-    },
-    {
-      title: "Ethics in AI-Driven UX",
-      instructor: "Prof. Maya Singh",
-      duration: "2 hours", 
-      description: "Explore ethical considerations when implementing AI in user experience design."
-    },
-    {
-      title: "Building Adaptive Interfaces",
-      instructor: "Marcus Rodriguez",
-      duration: "3 hours",
-      description: "Create interfaces that adapt to user behavior using machine learning."
-    }
-  ];
 
   const getTypeColor = (type: string) => {
     switch (type) {
@@ -264,37 +244,6 @@ const Program = () => {
           </div>
         </section>
 
-
-        {/* Workshops */}
-        <section>
-          <h2 className="text-3xl font-bold mb-8">Pre-Conference Workshops</h2>
-          <p className="text-muted-foreground mb-8 text-center">
-            June 23, 2026 - Optional workshops available for additional registration
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {workshops.map((workshop, index) => (
-              <Card key={index} className="shadow-card hover:shadow-glow transition-smooth">
-                <CardHeader>
-                  <Badge className="w-fit mb-2 bg-accent text-accent-foreground">Workshop</Badge>
-                  <CardTitle className="text-lg">{workshop.title}</CardTitle>
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                    <span className="flex items-center">
-                      <User className="h-4 w-4 mr-1" />
-                      {workshop.instructor}
-                    </span>
-                    <span className="flex items-center">
-                      <Clock className="h-4 w-4 mr-1" />
-                      {workshop.duration}
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{workshop.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
       </div>
     </Layout>
   );
