@@ -129,13 +129,14 @@ const Program = () => {
             <Card className="shadow-card">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Badge className="mr-3 bg-accent">Pre-Conference</Badge>
+                  <Badge className="mr-3 bg-accent">Pre-Conference Workshop</Badge>
                   June 23, 2026
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li>• Doctoral Student Workshop</li>
+                  <li>• MIT Rm 1-131, 10am–5pm</li>
                 </ul>
               </CardContent>
             </Card>
