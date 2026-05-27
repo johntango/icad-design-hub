@@ -40,7 +40,7 @@ const Program = () => {
     { time: "16:25 - 16:42", title: "AI-Driven Axiomatic Design for Product Configuration in the Context of Industry 5.0", speaker: "George Drăghici", authors: "Gabriel Sirbu, George Drăghici, Adrian Ciprian Firu", type: "session", location: "Main Auditorium" },
     { time: "16:42 - 16:59", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
 
-    { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "break", location: "MIT Samberg Center" }
+    { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "dinner", location: "MIT Samberg Center" }
   ];
 
   const day2Schedule: ScheduleItem[] = [
@@ -86,8 +86,14 @@ const Program = () => {
       case 'workshop': return 'bg-accent text-accent-foreground';
       case 'break': return 'bg-muted text-muted-foreground';
       case 'opening': return 'bg-conference-gold text-conference-dark';
+      case 'dinner': return 'bg-conference-gold text-conference-dark font-bold';
       default: return 'bg-muted text-muted-foreground';
     }
+  };
+
+  const getCardHighlight = (type: string) => {
+    if (type === 'dinner') return 'border-2 border-conference-gold bg-conference-gold/10';
+    return '';
   };
 
   return (
@@ -136,7 +142,7 @@ const Program = () => {
           </div>
           <div className="space-y-4">
             {day1Schedule.map((item, index) => (
-              <Card key={index} className="shadow-card">
+              <Card key={index} className={`shadow-card ${getCardHighlight(item.type)}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
@@ -186,7 +192,7 @@ const Program = () => {
           </div>
           <div className="space-y-4">
             {day2Schedule.map((item, index) => (
-              <Card key={index} className="shadow-card">
+              <Card key={index} className={`shadow-card ${getCardHighlight(item.type)}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
