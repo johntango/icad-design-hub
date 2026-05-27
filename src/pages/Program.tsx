@@ -58,15 +58,53 @@ const Program = () => {
       location: "Main Auditorium"
     },
     {
-      time: "14:15 - 15:45",
-      title: "Human-AI Collaboration",
+      time: "15:00 - 15:17",
+      title: "Architecture of Participation / Collective Systems",
+      speaker: "Abel Sanchez",
       type: "session",
-      location: "Room B",
-      papers: [
-        "Co-creative Design Processes",
-        "Trust in AI Design Assistants",
-        "Designing for Human-AI Teams"
-      ]
+      location: "Room B"
+    },
+    {
+      time: "15:17 - 15:34",
+      title: "AI–Axiomatic Design for Telemedicine",
+      speaker: "Chiara Parretti",
+      type: "session",
+      location: "Room B"
+    },
+    {
+      time: "15:34 - 15:51",
+      title: "Human-Centric AI / Manufacturing Systems",
+      speaker: "Emmanuel Francalanza",
+      type: "session",
+      location: "Room B"
+    },
+    {
+      time: "15:51 - 16:08",
+      title: "AI-aided Genetic Knowledge Graphs",
+      speaker: "Fernando Rolli",
+      type: "session",
+      location: "Room B"
+    },
+    {
+      time: "16:08 - 16:25",
+      title: "AI + Telemedicine Systems",
+      speaker: "Alessandro Polidoro",
+      type: "session",
+      location: "Room B"
+    },
+    {
+      time: "16:25 - 16:42",
+      title: "AI-Driven Product Configuration",
+      speaker: "George Drăghici",
+      type: "session",
+      location: "Room B"
+    },
+    {
+      time: "16:42 - 16:59",
+      title: "Flame AI in Healthcare",
+      speaker: "Clement Tan",
+      type: "session",
+      location: "Room B"
     },
     {
       time: "18:00 - 20:00",
