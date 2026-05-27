@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, User } from "lucide-react";
+import aiLady from "@/assets/ai-lady.png";
 
 const Program = () => {
   type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; authors?: string; affiliation?: string; papers?: string[] };
