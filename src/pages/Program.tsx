@@ -4,38 +4,41 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, User } from "lucide-react";
 
 const Program = () => {
-  type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; affiliation?: string; papers?: string[] };
+  type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; authors?: string; affiliation?: string; papers?: string[] };
   const day1Schedule: ScheduleItem[] = [
-    {
-      time: "8:00 - 9:00",
-      title: "Registration & Coffee",
-      type: "logistics",
-      location: "Main Lobby"
-    },
-    { time: "9:00 - 9:17", title: "Sustainability Evaluation in Human–Robot Systems", speaker: "Asja Emer", type: "session", location: "Main Auditorium" },
-    { time: "9:17 - 9:34", title: "Flame AI / Collective System Design", speaker: "David Cochran", type: "session", location: "Main Auditorium" },
-    { time: "9:34 - 9:51", title: "Humanistic-AI for Bridging Design Empathy Gap", speaker: "Pam Mantri", type: "session", location: "Main Auditorium" },
-    { time: "9:51 - 10:08", title: "AI as a Support Tool for Axiomatic Design", speaker: "António Gabriel-Santos", type: "session", location: "Main Auditorium" },
-    { time: "10:08 - 10:25", title: "IT/OT Convergence using Axiomatic Design", speaker: "Matteo De Marchi", type: "session", location: "Main Auditorium" },
+    { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Main Lobby" },
+
+    { time: "9:00 - 9:17", title: "Axiomatic Design–Based Sustainability Evaluation in Manufacturing: An Energy Monitoring Case Study in a Human–Robot Collaborative Workstation", speaker: "Asja Emer", authors: "Asja Emer, Amberlynn Bonello, Chiara Nezzi, Emmanuel Francalanza, Erwin Rauch, Dominik Matt", type: "session", location: "Main Auditorium" },
+    { time: "9:17 - 9:34", title: "Axiomatic Design Foundations for AI-Driven Collective System Design", speaker: "David Cochran", authors: "David Cochran", type: "session", location: "Main Auditorium" },
+    { time: "9:34 - 9:51", title: "Humanistic-AI for Bridging Design Empathy Gap", speaker: "Pam Mantri", authors: "Pam Mantri, John Thomas, John Williams", type: "session", location: "Main Auditorium" },
+    { time: "9:51 - 10:08", title: "Artificial Intelligence as a Support Tool for Axiomatic Design: Insights from an Industrial Case Study", speaker: "António Gabriel-Santos", authors: "António Gabriel-Santos, João Fradinho, Miguel Cavique, António Mourão", type: "session", location: "Main Auditorium" },
+    { time: "10:08 - 10:25", title: "Axiomatic Design as a Strategic Tool for IT/OT Convergence in Brownfield Manufacturing", speaker: "Matteo De Marchi", authors: "Matteo De Marchi, Dylan Morelato, Christopher Brown, Erwin Rauch", type: "session", location: "Main Auditorium" },
+
     { time: "10:30 - 10:50", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
-    { time: "10:50 - 11:07", title: "AI Manufacturing / Industrial Systems", speaker: "Erwin Rauch", type: "session", location: "Main Auditorium" },
-    { time: "11:07 - 11:24", title: "AI-Enhanced Axiomatic Design", speaker: "Xin Chen", type: "session", location: "Main Auditorium" },
-    { time: "11:24 - 11:41", title: "Human-Agentic Responsible AI (HARAI)", speaker: "John Thomas", type: "session", location: "Main Auditorium" },
-    { time: "11:41 - 11:58", title: "Memory-Centric Dual-Process AI Architecture", speaker: "Federico Quijada", type: "session", location: "Main Auditorium" },
+
+    { time: "10:50 - 11:07", title: "AI Manufacturing / Industrial Systems", speaker: "Erwin Rauch", authors: "Erwin Rauch", type: "session", location: "Main Auditorium" },
+    { time: "11:07 - 11:24", title: "AI-Enhanced Axiomatic Design: Statistical Determination of Structural Predictability and Control Decision-Making in Manufacturing Systems", speaker: "Xin Chen", authors: "Xin Chen, Kai Cheng, Mark Jackson", type: "session", location: "Main Auditorium" },
+    { time: "11:24 - 11:41", title: "Design of Human-Agentic Responsible AI (HARAI)", speaker: "John Thomas", authors: "John Thomas, Pam Mantri, John Williams", type: "session", location: "Main Auditorium" },
+    { time: "11:41 - 11:58", title: "An Axiomatic, Memory-Centric Dual-Process AI Architecture for Longitudinal Managerial Judgment", speaker: "Federico Quijada", authors: "Federico Quijada", type: "session", location: "Main Auditorium" },
+
     { time: "12:00 - 13:00", title: "Break (No Lunch Provided)", type: "break", location: "" },
-    { time: "13:00 - 13:17", title: "AI-Enabled Adaptive Manufacturing Workstations", speaker: "Amberlynn Bonello", type: "session", location: "Main Auditorium" },
-    { time: "13:17 - 13:34", title: "Principled Intuitive Design in the Age of AI", speaker: "John Williams", type: "session", location: "Main Auditorium" },
-    { time: "13:34 - 13:51", title: "AI Framework for Waste-to-Energy Systems", speaker: "Mirzi Betasolo", type: "session", location: "Main Auditorium" },
-    { time: "13:51 - 14:08", title: "Hybrid LLM Architecture for Axiomatic Design", speaker: "Edward Abela", type: "session", location: "Main Auditorium" },
-    { time: "14:08 - 14:25", title: "Industrial AI Support for Axiomatic Design", speaker: "Miguel Cavique", type: "session", location: "Main Auditorium" },
+
+    { time: "13:00 - 13:17", title: "An Axiomatic Design Approach for AI-Enabled Adaptive Manufacturing Workstations for Persons with Disabilities", speaker: "Amberlynn Bonello", authors: "Amberlynn Bonello, Emmanuel Francalanza, Maria Victoria Gauci, Paul Refalo", type: "session", location: "Main Auditorium" },
+    { time: "13:17 - 13:34", title: "Principled Intuitive Design in the Age of AI", speaker: "John Williams", authors: "John Williams, John Thomas, Pam Mantri", type: "session", location: "Main Auditorium" },
+    { time: "13:34 - 13:51", title: "An Axiomatic Design and AI Framework for Waste-to-Energy Fuel Systems in Railway Prototype: A PNGUoT Case Study", speaker: "Mirzi Betasolo", authors: "Mirzi Betasolo, Musyoki Mwangangi", type: "session", location: "Main Auditorium" },
+    { time: "13:51 - 14:08", title: "A Hybrid Large Language Model Architecture for Generating Independence in Axiomatic Design", speaker: "Edward Abela", authors: "Edward Abela, Emmanuel Francalanza", type: "session", location: "Main Auditorium" },
+    { time: "14:08 - 14:25", title: "Artificial Intelligence as a Support Tool for Axiomatic Design: Insights from an Industrial Case Study", speaker: "Miguel Cavique", authors: "António Gabriel-Santos, João Fradinho, Miguel Cavique, António Mourão", type: "session", location: "Main Auditorium" },
+
     { time: "14:40 - 15:00", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
-    { time: "15:00 - 15:17", title: "Architecture of Participation / Collective Systems", speaker: "Abel Sanchez", type: "session", location: "Main Auditorium" },
-    { time: "15:17 - 15:34", title: "AI–Axiomatic Design for Telemedicine", speaker: "Chiara Parretti", type: "session", location: "Main Auditorium" },
-    { time: "15:34 - 15:51", title: "Human-Centric AI / Manufacturing Systems", speaker: "Emmanuel Francalanza", type: "session", location: "Main Auditorium" },
-    { time: "15:51 - 16:08", title: "AI-aided Genetic Knowledge Graphs", speaker: "Fernando Rolli", type: "session", location: "Main Auditorium" },
-    { time: "16:08 - 16:25", title: "AI + Telemedicine Systems", speaker: "Alessandro Polidoro", type: "session", location: "Main Auditorium" },
-    { time: "16:25 - 16:42", title: "AI-Driven Product Configuration", speaker: "George Drăghici", type: "session", location: "Main Auditorium" },
-    { time: "16:42 - 16:59", title: "Flame AI in Healthcare", speaker: "Clement Tan", type: "session", location: "Main Auditorium" },
+
+    { time: "15:00 - 15:17", title: "Architecture of Participation for Sustainable Academic Communities: An Axiomatic Design Formulation and Discord Case Study", speaker: "Abel Sanchez", authors: "Abel Sanchez", type: "session", location: "Main Auditorium" },
+    { time: "15:17 - 15:34", title: "A Combined AI-Axiomatic Design Method Based on the Case Stories Technique in the Development of Telemedicine Services", speaker: "Chiara Parretti", authors: "Chiara Parretti, Fernando Rolli, Alessandro Polidoro, Riccardo Barbieri, Bianca Bindi, Paolo Citti", type: "session", location: "Main Auditorium" },
+    { time: "15:34 - 15:51", title: "An Axiomatic Design-V Model (AD-V) for Human-Centric Safety-Critical Product Development: A Collaborative Robotic Application", speaker: "Emmanuel Francalanza", authors: "Isaac Cutajar, Emmanuel Francalanza, Edward Abela, Amberlynn Bonello, Joseph Zammit", type: "session", location: "Main Auditorium" },
+    { time: "15:51 - 16:08", title: "Artificial Intelligence Aided Axiomatic Design as a Tool for Optimizing Genetic Knowledge Graphs", speaker: "Fernando Rolli", authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono", type: "session", location: "Main Auditorium" },
+    { time: "16:08 - 16:25", title: "A Combined AI-Axiomatic Design Method Based on the Case Stories Technique in the Development of Telemedicine Services", speaker: "Alessandro Polidoro", authors: "Chiara Parretti, Fernando Rolli, Alessandro Polidoro, Riccardo Barbieri, Bianca Bindi, Paolo Citti", type: "session", location: "Main Auditorium" },
+    { time: "16:25 - 16:42", title: "AI-Driven Axiomatic Design for Product Configuration in the Context of Industry 5.0", speaker: "George Drăghici", authors: "Gabriel Sirbu, George Drăghici, Adrian Ciprian Firu", type: "session", location: "Main Auditorium" },
+    { time: "16:42 - 16:59", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
+
     { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "break", location: "MIT Samberg Center" }
   ];
 
@@ -160,6 +163,11 @@ const Program = () => {
                           <User className="h-4 w-4 inline mr-1" />
                           {item.speaker}
                           {item.affiliation && <span className="text-muted-foreground"> - {item.affiliation}</span>}
+                        </p>
+                      )}
+                      {item.authors && (
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {item.authors}
                         </p>
                       )}
                       {item.papers && (
