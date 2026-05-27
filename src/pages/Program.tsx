@@ -11,107 +11,31 @@ const Program = () => {
       type: "logistics",
       location: "Main Lobby"
     },
-    {
-      time: "9:00 - 9:15",
-      title: "Welcome & Opening Remarks",
-      speaker: "Conference Chairs",
-      type: "opening",
-      location: "Main Auditorium"
-    },
-    {
-      time: "9:15 - 10:00",
-      title: "The Future of AI and Human Creativity",
-      speaker: "Dr. Nam P. Suh",
-      affiliation: "Meta AI",
-      type: "keynote",
-      location: "Main Auditorium"
-    },
-    {
-      time: "10:00 - 10:30",
-      title: "Coffee Break & Networking",
-      type: "break",
-      location: "Exhibition Hall"
-    },
-    {
-      time: "10:30 - 12:00",
-      title: "AI-Powered Design Tools",
-      type: "session",
-      location: "Room A",
-      papers: [
-        "Automated Layout Generation using Deep Learning",
-        "AI-Assisted Color Palette Creation",
-        "Generative Typography Systems"
-      ]
-    },
-    {
-      time: "12:00 - 13:30",
-      title: "Lunch & Poster Session",
-      type: "break",
-      location: "Exhibition Hall"
-    },
-    {
-      time: "13:30 - 14:15",
-      title: "Design in the Age of AI",
-      speaker: "Susan Kare",
-      affiliation: "Apple (Former)",
-      type: "keynote",
-      location: "Main Auditorium"
-    },
-    {
-      time: "15:00 - 15:17",
-      title: "Architecture of Participation / Collective Systems",
-      speaker: "Abel Sanchez",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "15:17 - 15:34",
-      title: "AI–Axiomatic Design for Telemedicine",
-      speaker: "Chiara Parretti",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "15:34 - 15:51",
-      title: "Human-Centric AI / Manufacturing Systems",
-      speaker: "Emmanuel Francalanza",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "15:51 - 16:08",
-      title: "AI-aided Genetic Knowledge Graphs",
-      speaker: "Fernando Rolli",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "16:08 - 16:25",
-      title: "AI + Telemedicine Systems",
-      speaker: "Alessandro Polidoro",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "16:25 - 16:42",
-      title: "AI-Driven Product Configuration",
-      speaker: "George Drăghici",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "16:42 - 16:59",
-      title: "Flame AI in Healthcare",
-      speaker: "Clement Tan",
-      type: "session",
-      location: "Room B"
-    },
-    {
-      time: "18:00 - 20:00",
-      title: "Nam P. Suh Conference Dinner",
-      type: "break",
-      location: "MIT Samberg Center"
-    }
+    { time: "9:00 - 9:17", title: "Sustainability Evaluation in Human–Robot Systems", speaker: "Asja Emer", type: "session", location: "Main Auditorium" },
+    { time: "9:17 - 9:34", title: "Flame AI / Collective System Design", speaker: "David Cochran", type: "session", location: "Main Auditorium" },
+    { time: "9:34 - 9:51", title: "Humanistic-AI for Bridging Design Empathy Gap", speaker: "Pam Mantri", type: "session", location: "Main Auditorium" },
+    { time: "9:51 - 10:08", title: "AI as a Support Tool for Axiomatic Design", speaker: "António Gabriel-Santos", type: "session", location: "Main Auditorium" },
+    { time: "10:08 - 10:25", title: "IT/OT Convergence using Axiomatic Design", speaker: "Matteo De Marchi", type: "session", location: "Main Auditorium" },
+    { time: "10:30 - 10:50", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
+    { time: "10:50 - 11:07", title: "AI Manufacturing / Industrial Systems", speaker: "Erwin Rauch", type: "session", location: "Main Auditorium" },
+    { time: "11:07 - 11:24", title: "AI-Enhanced Axiomatic Design", speaker: "Xin Chen", type: "session", location: "Main Auditorium" },
+    { time: "11:24 - 11:41", title: "Human-Agentic Responsible AI (HARAI)", speaker: "John Thomas", type: "session", location: "Main Auditorium" },
+    { time: "11:41 - 11:58", title: "Memory-Centric Dual-Process AI Architecture", speaker: "Federico Quijada", type: "session", location: "Main Auditorium" },
+    { time: "12:00 - 13:00", title: "Break (No Lunch Provided)", type: "break", location: "" },
+    { time: "13:00 - 13:17", title: "AI-Enabled Adaptive Manufacturing Workstations", speaker: "Amberlynn Bonello", type: "session", location: "Main Auditorium" },
+    { time: "13:17 - 13:34", title: "Principled Intuitive Design in the Age of AI", speaker: "John Williams", type: "session", location: "Main Auditorium" },
+    { time: "13:34 - 13:51", title: "AI Framework for Waste-to-Energy Systems", speaker: "Mirzi Betasolo", type: "session", location: "Main Auditorium" },
+    { time: "13:51 - 14:08", title: "Hybrid LLM Architecture for Axiomatic Design", speaker: "Edward Abela", type: "session", location: "Main Auditorium" },
+    { time: "14:08 - 14:25", title: "Industrial AI Support for Axiomatic Design", speaker: "Miguel Cavique", type: "session", location: "Main Auditorium" },
+    { time: "14:40 - 15:00", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
+    { time: "15:00 - 15:17", title: "Architecture of Participation / Collective Systems", speaker: "Abel Sanchez", type: "session", location: "Main Auditorium" },
+    { time: "15:17 - 15:34", title: "AI–Axiomatic Design for Telemedicine", speaker: "Chiara Parretti", type: "session", location: "Main Auditorium" },
+    { time: "15:34 - 15:51", title: "Human-Centric AI / Manufacturing Systems", speaker: "Emmanuel Francalanza", type: "session", location: "Main Auditorium" },
+    { time: "15:51 - 16:08", title: "AI-aided Genetic Knowledge Graphs", speaker: "Fernando Rolli", type: "session", location: "Main Auditorium" },
+    { time: "16:08 - 16:25", title: "AI + Telemedicine Systems", speaker: "Alessandro Polidoro", type: "session", location: "Main Auditorium" },
+    { time: "16:25 - 16:42", title: "AI-Driven Product Configuration", speaker: "George Drăghici", type: "session", location: "Main Auditorium" },
+    { time: "16:42 - 16:59", title: "Flame AI in Healthcare", speaker: "Clement Tan", type: "session", location: "Main Auditorium" },
+    { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "break", location: "MIT Samberg Center" }
   ];
 
   const workshops = [
