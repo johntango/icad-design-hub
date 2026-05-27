@@ -105,7 +105,7 @@ const Program = () => {
 
         {/* Program Overview */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-md mx-auto">
             <Card className="shadow-card">
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -117,38 +117,6 @@ const Program = () => {
                 <ul className="space-y-2 text-sm">
                   <li>• Doctoral Student Workshop</li>
                   <li>• MIT Rm 1-131, 10am–5pm</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Badge className="mr-3 bg-primary">Day 1</Badge>
-                  June 24, 2026
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li>• Keynote presentations</li>
-                  <li>• Research paper sessions</li>
-                  <li>• Poster presentations</li>
-                  <li>• Welcome reception</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Badge className="mr-3 bg-secondary">Day 2</Badge>
-                  June 25, 2026
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li>• Industry presentations</li>
-                  <li>• Hands-on workshops</li>
-                  <li>• Panel discussions</li>
-                  <li>• Closing ceremony</li>
                 </ul>
               </CardContent>
             </Card>
