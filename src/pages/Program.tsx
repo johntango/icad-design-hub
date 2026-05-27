@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, MapPin, User } from "lucide-react";
 
 const Program = () => {
-  const day1Schedule = [
+  type ScheduleItem = { time: string; title: string; type: string; location: string; speaker?: string; affiliation?: string; papers?: string[] };
+  const day1Schedule: ScheduleItem[] = [
     {
       time: "8:00 - 9:00",
       title: "Registration & Coffee",
