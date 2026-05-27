@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavLink } from "react-router-dom"; // ✅ use React Router navigation
+import { cn } from "@/lib/utils";
 
 interface NavigationProps {
   currentPage: string;
@@ -13,13 +14,13 @@ const Navigation = ({ currentPage }: NavigationProps) => {
 
   const navigationItems = [
     { id: "home", label: "Home", href: "/" },
-    { id: "committee", label: "Committee", href: "/committee" },
-    { id: "call-for-papers", label: "Call for Papers", href: "/call-for-papers" },
-    { id: "venue", label: "Venue", href: "/venue" },
     { id: "program", label: "Program", href: "/program" },
+    { id: "committee", label: "Committee", href: "/committee" },
+    { id: "call-for-papers", label: "Call for Papers", href: "/call-for-papers", disabled: true },
+    { id: "venue", label: "Venue", href: "/venue" },
     { id: "visa", label: "Visa", href: "/visa" },
     { id: "dates", label: "Dates", href: "/dates" },
-    { id: "payment", label: "Registration", href: "/payment" },
+    { id: "payment", label: "Registration", href: "/payment", highlight: true },
     { id: "admin", label: "Admin", href: "/admin" },
   ];
 
@@ -44,12 +45,21 @@ const Navigation = ({ currentPage }: NavigationProps) => {
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
-                  variant={currentPage === item.id ? "default" : "outline"}
+                  variant={item.highlight ? "default" : currentPage === item.id ? "default" : "outline"}
                   size="sm"
-                  asChild
-                  className="transition-smooth"
+                  asChild={!item.disabled}
+                  disabled={item.disabled}
+                  className={cn(
+                    "transition-smooth",
+                    item.disabled && "opacity-50 cursor-not-allowed",
+                    item.highlight && "ring-2 ring-primary ring-offset-1 font-semibold"
+                  )}
                 >
-                  <NavLink to={item.href}>{item.label}</NavLink>
+                  {item.disabled ? (
+                    <span>{item.label}</span>
+                  ) : (
+                    <NavLink to={item.href}>{item.label}</NavLink>
+                  )}
                 </Button>
               ))}
               <ThemeToggle />
@@ -76,13 +86,22 @@ const Navigation = ({ currentPage }: NavigationProps) => {
               {navigationItems.map((item) => (
                 <Button
                   key={item.id}
-                  variant={currentPage === item.id ? "default" : "outline"}
+                  variant={item.highlight ? "default" : currentPage === item.id ? "default" : "outline"}
                   size="sm"
-                  asChild
-                  className="w-full justify-start transition-smooth"
-                  onClick={() => setIsMenuOpen(false)}
+                  asChild={!item.disabled}
+                  disabled={item.disabled}
+                  className={cn(
+                    "w-full justify-start transition-smooth",
+                    item.disabled && "opacity-50 cursor-not-allowed",
+                    item.highlight && "ring-2 ring-primary ring-offset-1 font-semibold"
+                  )}
+                  onClick={() => !item.disabled && setIsMenuOpen(false)}
                 >
-                  <NavLink to={item.href}>{item.label}</NavLink>
+                  {item.disabled ? (
+                    <span>{item.label}</span>
+                  ) : (
+                    <NavLink to={item.href}>{item.label}</NavLink>
+                  )}
                 </Button>
               ))}
             </div>
