@@ -86,8 +86,14 @@ const Program = () => {
       case 'workshop': return 'bg-accent text-accent-foreground';
       case 'break': return 'bg-muted text-muted-foreground';
       case 'opening': return 'bg-conference-gold text-conference-dark';
+      case 'dinner': return 'bg-conference-gold text-conference-dark font-bold';
       default: return 'bg-muted text-muted-foreground';
     }
+  };
+
+  const getCardHighlight = (type: string) => {
+    if (type === 'dinner') return 'border-2 border-conference-gold bg-conference-gold/10';
+    return '';
   };
 
   return (
