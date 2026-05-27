@@ -125,7 +125,9 @@ const Program = () => {
 
         {/* Day 1 Schedule */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Day 1 - June 24, 2026</h2>
+          <div className="bg-primary text-primary-foreground rounded-lg p-4 mb-8">
+            <h2 className="text-3xl font-bold">Day 1 - June 24, 2026</h2>
+          </div>
           <div className="space-y-4">
             {day1Schedule.map((item, index) => (
               <Card key={index} className="shadow-card">
