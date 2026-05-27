@@ -165,6 +165,11 @@ const Program = () => {
                           {item.affiliation && <span className="text-muted-foreground"> - {item.affiliation}</span>}
                         </p>
                       )}
+                      {item.authors && (
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {item.authors}
+                        </p>
+                      )}
                       {item.papers && (
                         <ul className="mt-2 space-y-1">
                           {item.papers.map((paper, paperIndex) => (
