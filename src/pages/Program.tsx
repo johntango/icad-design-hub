@@ -61,7 +61,7 @@ const Program = () => {
 
     { time: "12:00 - 13:00", title: "Break (No Lunch Provided)", type: "break", location: "" },
 
-    { time: "13:00 - 13:17", title: "Framing Axiomatic Design: A Key Strategy for Multidisciplinary Collaborations", speaker: "Joan Bruno Rodríguez", authors: "Joan Bruno Rodríguez", type: "session", location: "Main Auditorium" },
+    { time: "13:00 - 13:17", title: "Artificial Intelligence Aided Axiomatic Design as a Tool for Optimizing Genetic Knowledge Graphs", speaker: "Fernando Rolli", authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono", type: "session", location: "Main Auditorium" },
     { time: "13:17 - 13:34", title: "An AD Complementary Method for Structuring Verification of Critical FRs", speaker: "Erik Puik", authors: "Diederik Inzen van, Erik Puik", type: "session", location: "Main Auditorium" },
     { time: "13:34 - 13:51", title: "Axiomatic Design of a Slitter–Rewinder for Automated Adhesive Roll Production", speaker: "Andri Pétur Sveinsson", authors: "Andri Pétur Sveinsson, Fannar Smári Sindrason, Hinrik Logi Árnason, Joseph Timothy Foley", type: "session", location: "Main Auditorium" },
     { time: "13:51 - 14:08", title: "Axiomatic Design for Human-AI Co-Design: A Framework for Principled Collective Intelligence in Agentic AI Systems", speaker: "Himanshu Joshi", authors: "Himanshu Joshi, Shivani Shukla", type: "session", location: "Main Auditorium" },
