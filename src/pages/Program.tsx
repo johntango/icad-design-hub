@@ -38,7 +38,7 @@ const Program = () => {
     { time: "15:51 - 16:08", title: "Framing Axiomatic Design: A Key Strategy for Multidisciplinary Collaborations", speaker: "Joan Bruno Rodríguez", authors: "Joan Bruno Rodríguez", type: "session", location: "Main Auditorium" },
     { time: "16:08 - 16:25", title: "A Combined AI-Axiomatic Design Method Based on the Case Stories Technique in the Development of Telemedicine Services", speaker: "Alessandro Polidoro", authors: "Chiara Parretti, Fernando Rolli, Alessandro Polidoro, Riccardo Barbieri, Bianca Bindi, Paolo Citti", type: "session", location: "Main Auditorium" },
     { time: "16:25 - 16:42", title: "AI-Driven Axiomatic Design for Product Configuration in the Context of Industry 5.0", speaker: "George Drăghici", authors: "Gabriel Sirbu, George Drăghici, Adrian Ciprian Firu", type: "session", location: "Main Auditorium" },
-    { time: "16:42 - 16:59", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
+    { time: "16:42 - 16:59", title: "An AD Complementary Method for Structuring Verification of Critical FRs", speaker: "Erik Puik", authors: "Diederik Inzen van, Erik Puik", type: "session", location: "Main Auditorium" },
 
     { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "dinner", location: "MIT Samberg Center" }
   ];
@@ -62,7 +62,7 @@ const Program = () => {
     { time: "12:00 - 13:00", title: "Break (No Lunch Provided)", type: "break", location: "" },
 
     { time: "13:00 - 13:17", title: "Artificial Intelligence Aided Axiomatic Design as a Tool for Optimizing Genetic Knowledge Graphs", speaker: "Fernando Rolli", authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono", type: "session", location: "Main Auditorium" },
-    { time: "13:17 - 13:34", title: "An AD Complementary Method for Structuring Verification of Critical FRs", speaker: "Erik Puik", authors: "Diederik Inzen van, Erik Puik", type: "session", location: "Main Auditorium" },
+    { time: "13:17 - 13:34", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
     { time: "13:34 - 13:51", title: "Axiomatic Design of a Slitter–Rewinder for Automated Adhesive Roll Production", speaker: "Andri Pétur Sveinsson", authors: "Andri Pétur Sveinsson, Fannar Smári Sindrason, Hinrik Logi Árnason, Joseph Timothy Foley", type: "session", location: "Main Auditorium" },
     { time: "13:51 - 14:08", title: "Axiomatic Design for Human-AI Co-Design: A Framework for Principled Collective Intelligence in Agentic AI Systems", speaker: "Himanshu Joshi", authors: "Himanshu Joshi, Shivani Shukla", type: "session", location: "Main Auditorium" },
     { time: "14:08 - 14:25", title: "Develop a Project Plan for a Drone Using AI and Axiomatic Design Principles", speaker: "Oana Dodun", authors: "Mihaela Nicolau, Dan Dodun, Cristian Bișog, Martin Robert Ciaușu-Sliwa, Ana Ghimp, Oana Dodun", type: "session", location: "Main Auditorium" },
