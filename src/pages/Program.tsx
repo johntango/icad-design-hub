@@ -74,8 +74,8 @@ const Program = () => {
     { time: "15:34 - 15:51", title: "An Axiomatic Design-V Model (AD-V) for Human-Centric Safety-Critical Product Development: A Collaborative Robotic Application", speaker: "Isaac Cutajar", authors: "Isaac Cutajar, Emmanuel Francalanza, Edward Abela, Amberlynn Bonello, Joseph Zammit", type: "session", location: "Main Auditorium" },
     { time: "15:51 - 16:08", title: "A Comparative Analysis of Industrial Symbiosis Implementation Guidelines: Assessing the Potential of Axiomatic Design", speaker: "Lars Jakobs", authors: "Lars Jakobs, Benedikt Mark, Erwin Rauch, Dominik Matt", type: "session", location: "Main Auditorium" },
     { time: "16:08 - 16:25", title: "PrimoWhip – Axiomatic Design of an Automatic Cream Whipper", speaker: "Páll Rúnarsson", authors: "Páll Rúnarsson, Joseph Foley, Arnar Haraldsson, Tumi Oddsson, Katla Garðarsdóttir", type: "session", location: "Main Auditorium" },
-    { time: "16:25 - 16:42", title: "Teaching Axiomatic Design to First-Year Students: A Longitudinal Study on Early Design Cognition in Engineering Education", speaker: "Mirzi Betasolo", authors: "Mirzi Betasolo", type: "session", location: "Main Auditorium" },
-    { time: "16:42 - 16:59", title: "Simple Axiomatic Design Description Language", speaker: "Chloe Alex Schaff", authors: "Chloe Alex Schaff, Joseph Timothy Foley, Kristinn Rúnar Rúnarsson", type: "session", location: "Main Auditorium" }
+    { time: "16:25 - 16:42", title: "Simple Axiomatic Design Description Language", speaker: "Chloe Alex Schaff", authors: "Chloe Alex Schaff, Joseph Timothy Foley, Kristinn Rúnar Rúnarsson", type: "session", location: "Main Auditorium" },
+    { time: "16:42 - 16:59", title: "Teaching Axiomatic Design to First-Year Students: A Longitudinal Study on Early Design Cognition in Engineering Education", speaker: "Mirzi Betasolo", authors: "Mirzi Betasolo", type: "session", location: "Main Auditorium" }
   ];
 
 
