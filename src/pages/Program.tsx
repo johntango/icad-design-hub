@@ -49,7 +49,7 @@ const Program = () => {
     { time: "9:00 - 9:17", title: "Axiomatic Design (AD) and Organization Design: Opportunities and Challenges in Transferring AD to the Social Sciences", speaker: "Nicolay Worren", authors: "Nicolay Worren", type: "session", location: "Main Auditorium" },
     { time: "9:17 - 9:34", title: "A Deep Dive into Axiomatic Design – Part I: Problem Formulation", speaker: "Aydin Homay", authors: "Aydin Homay", type: "session", location: "Main Auditorium" },
     { time: "9:34 - 9:51", title: "Bangsi: An Online Tool for Axiomatic Design", speaker: "Michiel van Osch", authors: "Michiel van Osch, Yvan de Wert, Erik Puik", type: "session", location: "Main Auditorium" },
-    { time: "9:51 - 10:08", title: "Power Line Carrier Technology Study", speaker: "Sankalp Sinha", authors: "Sankalp Sinha, Kevin Partington", type: "session", location: "Main Auditorium" },
+    { time: "9:51 - 10:08", title: "Axiomatic Design for Human-AI Co-Design: A Framework for Principled Collective Intelligence in Agentic AI Systems", speaker: "Himanshu Joshi", authors: "Himanshu Joshi, Shivani Shukla", type: "session", location: "Main Auditorium" },
     { time: "10:08 - 10:25", title: "Axiomatic Design Foundations for AI-Driven Collective System Design", speaker: "David Cochran", authors: "David Cochran", type: "session", location: "Main Auditorium" },
 
     { time: "10:30 - 10:50", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
@@ -64,7 +64,7 @@ const Program = () => {
     { time: "13:00 - 13:17", title: "Artificial Intelligence Aided Axiomatic Design as a Tool for Optimizing Genetic Knowledge Graphs", speaker: "Fernando Rolli", authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono", type: "session", location: "Main Auditorium" },
     { time: "13:17 - 13:34", title: "Flame AI: Collective System Design in Healthcare", speaker: "Clement Tan", authors: "David Cochran, Clement Tan", type: "session", location: "Main Auditorium" },
     { time: "13:34 - 13:51", title: "Axiomatic Design of a Slitter–Rewinder for Automated Adhesive Roll Production", speaker: "Andri Pétur Sveinsson", authors: "Andri Pétur Sveinsson, Fannar Smári Sindrason, Hinrik Logi Árnason, Joseph Timothy Foley", type: "session", location: "Main Auditorium" },
-    { time: "13:51 - 14:08", title: "Axiomatic Design for Human-AI Co-Design: A Framework for Principled Collective Intelligence in Agentic AI Systems", speaker: "Himanshu Joshi", authors: "Himanshu Joshi, Shivani Shukla", type: "session", location: "Main Auditorium" },
+    { time: "13:51 - 14:08", title: "Power Line Carrier Technology Study", speaker: "Sankalp Sinha", authors: "Sankalp Sinha, Kevin Partington", type: "session", location: "Main Auditorium" },
     { time: "14:08 - 14:25", title: "Develop a Project Plan for a Drone Using AI and Axiomatic Design Principles", speaker: "Oana Dodun", authors: "Mihaela Nicolau, Dan Dodun, Cristian Bișog, Martin Robert Ciaușu-Sliwa, Ana Ghimp, Oana Dodun", type: "session", location: "Main Auditorium" },
 
     { time: "14:40 - 15:00", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
