@@ -134,9 +134,9 @@ const Program = () => {
     },
     {
       time: "14:08 - 14:25",
-      title: "Artificial Intelligence as a Support Tool for Axiomatic Design: Insights from an Industrial Case Study",
-      speaker: "Miguel Cavique",
-      authors: "António Gabriel-Santos, João Fradinho, Miguel Cavique, António Mourão",
+      title: "Functional independence - Reflections on the degree of coupling in the conceptual design phase",
+      speaker: "João Fradinho",
+      authors: "Fradinho, João; Gabriel-Santos, António; Cavique, Miguel; Mourão, António",
       type: "session",
       location: "Main Auditorium",
     },
