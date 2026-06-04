@@ -329,7 +329,7 @@ const Program = () => {
     {
       time: "14:08 - 14:25",
       title: "Develop a Project Plan for a Drone Using AI and Axiomatic Design Principles",
-      speaker: "Oana Dodun",
+      speaker: "Mihaela Nicolau",
       authors: "Mihaela Nicolau, Dan Dodun, Cristian Bișog, Martin Robert Ciaușu-Sliwa, Ana Ghimp, Oana Dodun",
       type: "session",
       location: "Main Auditorium",
