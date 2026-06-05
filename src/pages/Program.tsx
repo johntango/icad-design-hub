@@ -64,9 +64,7 @@ const Program = () => {
 
     {
       time: "10:50 - 11:07",
-      title: "AI Manufacturing / Industrial Systems",
-      speaker: "Erwin Rauch",
-      authors: "Erwin Rauch",
+      title: "Discussion",
       type: "session",
       location: "Main Auditorium",
     },
