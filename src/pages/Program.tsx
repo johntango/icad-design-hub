@@ -244,9 +244,9 @@ const Program = () => {
     },
     {
       time: "10:08 - 10:25",
-      title: "Axiomatic Design Foundations for AI-Driven Collective System Design",
-      speaker: "David Cochran",
-      authors: "David Cochran",
+      title: "Flame AI: Collective System Design in Healthcare",
+      speaker: "Clement Tan",
+      authors: "David Cochran, Clement Tan",
       type: "session",
       location: "Main Auditorium",
     },
@@ -302,9 +302,7 @@ const Program = () => {
     },
     {
       time: "13:17 - 13:34",
-      title: "Flame AI: Collective System Design in Healthcare",
-      speaker: "Clement Tan",
-      authors: "David Cochran, Clement Tan",
+      title: "TBD",
       type: "session",
       location: "Main Auditorium",
     },
