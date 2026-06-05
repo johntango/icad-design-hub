@@ -186,14 +186,8 @@ const Program = () => {
       type: "session",
       location: "Main Auditorium",
     },
-    {
-      time: "16:25 - 16:42",
-      title: "Functional Independence – Reflections on the Degree of Coupling in the Conceptual Design Phase",
-      speaker: "João Fradinho",
-      authors: "Fradinho, João; Gabriel-Santos, António; Cavique, Miguel; Mourão, António",
-      type: "session",
-      location: "Main Auditorium",
-    },
+
+
 
     { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "dinner", location: "MIT Samberg Center" },
   ];
