@@ -374,6 +374,14 @@ const Program = () => {
       type: "session",
       location: "Main Auditorium",
     },
+    {
+      time: "16:42 - 16:59",
+      title: "Axiomatic Design-Based Solid Waste Management System for Papua New Guinea University of Technology",
+      speaker: "Mirzi Betasolo",
+      authors: "Mirzi Betasolo, Meseret Teweldebrihan",
+      type: "session",
+      location: "Main Auditorium",
+    },
   ];
 
   const getTypeColor = (type: string) => {
