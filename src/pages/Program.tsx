@@ -64,7 +64,9 @@ const Program = () => {
 
     {
       time: "10:50 - 11:07",
-      title: "Discussion",
+      title: "An AD Complementary Method for Structuring Verification of Critical FRs",
+      speaker: "Erik Puik",
+      authors: "Diederik Inzen van, Erik Puik",
       type: "session",
       location: "Main Auditorium",
     },
@@ -195,9 +197,7 @@ const Program = () => {
     },
     {
       time: "16:42 - 16:59",
-      title: "An AD Complementary Method for Structuring Verification of Critical FRs",
-      speaker: "Erik Puik",
-      authors: "Diederik Inzen van, Erik Puik",
+      title: "Discussion",
       type: "session",
       location: "Main Auditorium",
     },
