@@ -188,7 +188,9 @@ const Program = () => {
     },
     {
       time: "16:25 - 16:42",
-      title: "Discussion",
+      title: "Functional Independence – Reflections on the Degree of Coupling in the Conceptual Design Phase",
+      speaker: "João Fradinho",
+      authors: "Fradinho, João; Gabriel-Santos, António; Cavique, Miguel; Mourão, António",
       type: "session",
       location: "Main Auditorium",
     },
