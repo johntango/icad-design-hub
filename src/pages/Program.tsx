@@ -351,14 +351,6 @@ const Program = () => {
     },
     {
       time: "15:51 - 16:08",
-      title: "PrimoWhip – Axiomatic Design of an Automatic Cream Whipper",
-      speaker: "Páll Rúnarsson",
-      authors: "Páll Rúnarsson, Joseph Foley, Arnar Haraldsson, Tumi Oddsson, Katla Garðarsdóttir",
-      type: "session",
-      location: "Main Auditorium",
-    },
-    {
-      time: "16:08 - 16:25",
       title: "Simple Axiomatic Design Description Language",
       speaker: "Chloe Alex Schaff",
       authors: "Chloe Alex Schaff, Joseph Timothy Foley, Kristinn Rúnar Rúnarsson",
@@ -366,7 +358,7 @@ const Program = () => {
       location: "Main Auditorium",
     },
     {
-      time: "16:25 - 16:42",
+      time: "16:08 - 16:25",
       title: "Axiomatic Design-Based Solid Waste Management System for Papua New Guinea University of Technology",
       speaker: "Mirzi Betasolo",
       authors: "Mirzi Betasolo, Meseret Teweldebrihan",
@@ -374,11 +366,19 @@ const Program = () => {
       location: "Main Auditorium",
     },
     {
-      time: "16:42 - 16:59",
+      time: "16:25 - 16:42",
       title:
         "Teaching Axiomatic Design to First-Year Students: A Longitudinal Study on Early Design Cognition in Engineering Education",
       speaker: "Mirzi Betasolo",
       authors: "Mirzi Betasolo",
+      type: "session",
+      location: "Main Auditorium",
+    },
+    {
+      time: "16:42 - 16:59",
+      title: "PrimoWhip – Axiomatic Design of an Automatic Cream Whipper",
+      speaker: "Páll Rúnarsson",
+      authors: "Páll Rúnarsson, Joseph Foley, Arnar Haraldsson, Tumi Oddsson, Katla Garðarsdóttir",
       type: "session",
       location: "Main Auditorium",
     },
