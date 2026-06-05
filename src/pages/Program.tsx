@@ -289,7 +289,9 @@ const Program = () => {
     },
     {
       time: "13:17 - 13:34",
-      title: "TBD",
+      title: "Axiomatic Design Information Calculator",
+      speaker: "Chloe Schaff",
+      authors: "Joseph Timothy Foley, Chloe Schaff, Marcel Kyas",
       type: "session",
       location: "Main Auditorium",
     },
