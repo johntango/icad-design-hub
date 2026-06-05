@@ -367,18 +367,18 @@ const Program = () => {
     },
     {
       time: "16:25 - 16:42",
-      title:
-        "Teaching Axiomatic Design to First-Year Students: A Longitudinal Study on Early Design Cognition in Engineering Education",
+      title: "Axiomatic Design-Based Solid Waste Management System for Papua New Guinea University of Technology",
       speaker: "Mirzi Betasolo",
-      authors: "Mirzi Betasolo",
+      authors: "Mirzi Betasolo, Meseret Teweldebrihan",
       type: "session",
       location: "Main Auditorium",
     },
     {
       time: "16:42 - 16:59",
-      title: "Axiomatic Design-Based Solid Waste Management System for Papua New Guinea University of Technology",
+      title:
+        "Teaching Axiomatic Design to First-Year Students: A Longitudinal Study on Early Design Cognition in Engineering Education",
       speaker: "Mirzi Betasolo",
-      authors: "Mirzi Betasolo, Meseret Teweldebrihan",
+      authors: "Mirzi Betasolo",
       type: "session",
       location: "Main Auditorium",
     },
