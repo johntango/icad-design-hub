@@ -180,15 +180,6 @@ const Program = () => {
     },
     {
       time: "16:08 - 16:25",
-      title:
-        "A Combined AI-Axiomatic Design Method Based on the Case Stories Technique in the Development of Telemedicine Services",
-      speaker: "Alessandro Polidoro",
-      authors: "Chiara Parretti, Fernando Rolli, Alessandro Polidoro, Riccardo Barbieri, Bianca Bindi, Paolo Citti",
-      type: "session",
-      location: "Main Auditorium",
-    },
-    {
-      time: "16:25 - 16:42",
       title: "AI-Driven Axiomatic Design for Product Configuration in the Context of Industry 5.0",
       speaker: "Gabriel Sirbu",
       authors: "Gabriel Sirbu, George Drăghici, Adrian Ciprian Firu",
@@ -196,7 +187,7 @@ const Program = () => {
       location: "Main Auditorium",
     },
     {
-      time: "16:42 - 16:59",
+      time: "16:25 - 16:42",
       title: "Discussion",
       type: "session",
       location: "Main Auditorium",
