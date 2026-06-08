@@ -12,7 +12,7 @@ interface NavigationProps {
 const Navigation = ({ currentPage }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigationItems = [
+  const navigationItems: { id: string; label: string; href: string; disabled?: boolean; highlight?: boolean }[] = [
     { id: "home", label: "Home", href: "/" },
     { id: "program", label: "Program", href: "/program" },
     { id: "committee", label: "Committee", href: "/committee" },
