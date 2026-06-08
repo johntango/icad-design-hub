@@ -20,7 +20,7 @@ const Navigation = ({ currentPage }: NavigationProps) => {
     { id: "venue", label: "Venue", href: "/venue" },
     { id: "visa", label: "Visa", href: "/visa" },
     { id: "dates", label: "Dates", href: "/dates" },
-    { id: "payment", label: "Registration", href: "/payment", highlight: true },
+    { id: "payment", label: "Registration", href: "/payment", disabled: true },
     { id: "admin", label: "Admin", href: "/admin" },
   ];
 
