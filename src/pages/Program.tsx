@@ -27,6 +27,7 @@ const Program = () => {
       authors: "Asja Emer, Amberlynn Bonello, Chiara Nezzi, Emmanuel Francalanza, Erwin Rauch, Dominik Matt",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Erwin Rauch",
     },
     {
       time: "9:17 - 9:34",
