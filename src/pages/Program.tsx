@@ -293,6 +293,7 @@ const Program = () => {
       authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono",
       type: "session",
       location: "Main Auditorium",
+      moderator: "David Cochran",
     },
     {
       time: "13:17 - 13:34",
