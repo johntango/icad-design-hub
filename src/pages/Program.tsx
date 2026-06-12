@@ -338,7 +338,7 @@ const Program = () => {
       authors: "Petru Dusa, Eugen Purice, Razvan Mititelu, Cristian Cojocaru, Emanuel Mihalute",
       type: "session",
       location: "Main Auditorium",
-      moderator: "TBD",
+      moderator: "John Thomas",
     },
     {
       time: "15:17 - 15:34",
