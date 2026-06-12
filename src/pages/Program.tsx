@@ -109,6 +109,7 @@ const Program = () => {
       authors: "Amberlynn Bonello, Emmanuel Francalanza, Maria Victoria Gauci, Paul Refalo",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Erik Puik",
     },
     {
       time: "13:17 - 13:34",
