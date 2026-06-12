@@ -208,6 +208,7 @@ const Program = () => {
       authors: "Nicolay Worren",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Joan Bruno Rodríguez",
     },
     {
       time: "9:17 - 9:34",
