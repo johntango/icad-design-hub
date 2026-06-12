@@ -254,6 +254,7 @@ const Program = () => {
         "Laurențiu Slătineanu, Oana Dodun, Gheorghe Nagîț, Margareta Coteață, Andrei Marius Mihalache, Marius-Ionut Ripanu, Ștefan Jureschi, Roxana-Gabriela Hobjâlă",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Miguel Cavique",
     },
     {
       time: "11:07 - 11:24",
