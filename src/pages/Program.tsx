@@ -71,6 +71,7 @@ const Program = () => {
       authors: "Diederik Inzen van, Erik Puik",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Christopher Brown",
     },
     {
       time: "11:07 - 11:24",
