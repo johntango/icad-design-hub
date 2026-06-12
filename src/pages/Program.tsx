@@ -155,6 +155,7 @@ const Program = () => {
       authors: "Abel Sanchez",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Pam Mantri",
     },
     {
       time: "15:17 - 15:34",
