@@ -14,6 +14,7 @@ const Program = () => {
     authors?: string;
     affiliation?: string;
     papers?: string[];
+    moderator?: string;
   };
   const day1Schedule: ScheduleItem[] = [
     { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Samberg Center 7th floor" },
