@@ -512,12 +512,17 @@ const Program = () => {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-2">
+                      <div className="flex items-center space-x-3 mb-2 flex-wrap gap-y-1">
                         <Badge className={getTypeColor(item.type)}>{item.time}</Badge>
                         <Badge variant="outline">
                           <MapPin className="h-3 w-3 mr-1" />
                           {item.location}
                         </Badge>
+                        {item.moderator && (
+                          <Badge variant="outline" className="border-conference-gold text-conference-gold">
+                            Moderator: {item.moderator}
+                          </Badge>
+                        )}
                       </div>
                       <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                       {item.speaker && (
