@@ -14,6 +14,7 @@ const Program = () => {
     authors?: string;
     affiliation?: string;
     papers?: string[];
+    moderator?: string;
   };
   const day1Schedule: ScheduleItem[] = [
     { time: "8:00 - 9:00", title: "Registration & Coffee", type: "logistics", location: "Samberg Center 7th floor" },
@@ -26,6 +27,7 @@ const Program = () => {
       authors: "Asja Emer, Amberlynn Bonello, Chiara Nezzi, Emmanuel Francalanza, Erwin Rauch, Dominik Matt",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Erwin Rauch",
     },
     {
       time: "9:17 - 9:34",
@@ -69,6 +71,7 @@ const Program = () => {
       authors: "Diederik Inzen van, Erik Puik",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Christopher Brown",
     },
     {
       time: "11:07 - 11:24",
@@ -106,6 +109,7 @@ const Program = () => {
       authors: "Amberlynn Bonello, Emmanuel Francalanza, Maria Victoria Gauci, Paul Refalo",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Erik Puik",
     },
     {
       time: "13:17 - 13:34",
@@ -151,6 +155,7 @@ const Program = () => {
       authors: "Abel Sanchez",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Pam Mantri",
     },
     {
       time: "15:17 - 15:34",
@@ -203,6 +208,7 @@ const Program = () => {
       authors: "Nicolay Worren",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Joan Bruno Rodríguez",
     },
     {
       time: "9:17 - 9:34",
@@ -248,6 +254,7 @@ const Program = () => {
         "Laurențiu Slătineanu, Oana Dodun, Gheorghe Nagîț, Margareta Coteață, Andrei Marius Mihalache, Marius-Ionut Ripanu, Ștefan Jureschi, Roxana-Gabriela Hobjâlă",
       type: "session",
       location: "Main Auditorium",
+      moderator: "Miguel Cavique",
     },
     {
       time: "11:07 - 11:24",
@@ -286,6 +293,7 @@ const Program = () => {
       authors: "Fernando Rolli, Chiara Parretti, Alessandro Giorgetti, Alessandro Polidoro, Gabriele Arcidiacono",
       type: "session",
       location: "Main Auditorium",
+      moderator: "David Cochran",
     },
     {
       time: "13:17 - 13:34",
@@ -330,6 +338,7 @@ const Program = () => {
       authors: "Petru Dusa, Eugen Purice, Razvan Mititelu, Cristian Cojocaru, Emanuel Mihalute",
       type: "session",
       location: "Main Auditorium",
+      moderator: "TBD",
     },
     {
       time: "15:17 - 15:34",
@@ -454,12 +463,17 @@ const Program = () => {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-2">
+                      <div className="flex items-center space-x-3 mb-2 flex-wrap gap-y-1">
                         <Badge className={getTypeColor(item.type)}>{item.time}</Badge>
                         <Badge variant="outline">
                           <MapPin className="h-3 w-3 mr-1" />
                           {item.location}
                         </Badge>
+                        {item.moderator && (
+                          <Badge variant="outline" className="border-conference-gold text-conference-gold">
+                            Moderator: {item.moderator}
+                          </Badge>
+                        )}
                       </div>
                       <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                       {item.speaker && (
@@ -498,12 +512,17 @@ const Program = () => {
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center space-x-3 mb-2">
+                      <div className="flex items-center space-x-3 mb-2 flex-wrap gap-y-1">
                         <Badge className={getTypeColor(item.type)}>{item.time}</Badge>
                         <Badge variant="outline">
                           <MapPin className="h-3 w-3 mr-1" />
                           {item.location}
                         </Badge>
+                        {item.moderator && (
+                          <Badge variant="outline" className="border-conference-gold text-conference-gold">
+                            Moderator: {item.moderator}
+                          </Badge>
+                        )}
                       </div>
                       <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                       {item.speaker && (
