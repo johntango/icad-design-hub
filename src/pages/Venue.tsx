@@ -33,11 +33,12 @@ const Venue = () => {
   ];
 
   const nearbyHotels = [
-    { name: "The Kendall Hotel", distance: "0.3 miles", rate: "$259/night" },
-    { name: "Boston Marriott Cambridge", distance: "0.5 miles", rate: "$219/night" },
-    { name: "Le Méridien Cambridge-MIT", distance: "0.4 miles", rate: "$289/night" },
-    { name: "Hyatt Regency Cambridge", distance: "0.6 miles", rate: "$239/night" }
+    { name: "The Kendall Hotel", distance: "0.3 miles" },
+    { name: "Boston Marriott Cambridge", distance: "0.5 miles" },
+    { name: "Le Méridien Cambridge-MIT", distance: "0.4 miles" },
+    { name: "Hyatt Regency Cambridge", distance: "0.6 miles" }
   ];
+
 
   return (
     <Layout currentPage="venue">
@@ -132,9 +133,9 @@ const Venue = () => {
           <h2 className="text-3xl font-bold mb-8 text-center">Recommended Hotels</h2>
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Conference Hotel Partners</CardTitle>
+              <CardTitle>Nearby Hotels</CardTitle>
               <p className="text-muted-foreground">
-                Estimated rates at these nearby hotels for conference attendees.
+                Hotels located near the conference venue.
               </p>
             </CardHeader>
             <CardContent>
@@ -145,21 +146,20 @@ const Venue = () => {
                       <h3 className="font-semibold">{hotel.name}</h3>
                       <p className="text-sm text-muted-foreground">{hotel.distance} from venue</p>
                     </div>
-                     <div className="text-right">
-                       <p className="font-semibold text-primary">{hotel.rate}</p>
-                     </div>
                   </div>
                 ))}
               </div>
               <div className="mt-6 p-4 rounded-lg bg-primary/10 border border-primary/20">
                 <p className="text-sm">
-                  <strong>Booking Code:</strong> Use code "AIAX2026" when booking to receive the conference rate. 
-                  Book by April 1, 2026 to guarantee availability.
+                  <strong>Please note:</strong> Hotel prices in the Boston/Cambridge area are currently
+                  being affected by the FIFA World Cup taking place during the same period. We recommend
+                  booking early and comparing rates directly with hotels.
                 </p>
               </div>
             </CardContent>
           </Card>
         </section>
+
 
         {/* Venue Accessibility */}
         <section>
