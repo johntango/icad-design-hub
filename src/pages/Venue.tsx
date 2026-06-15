@@ -33,11 +33,12 @@ const Venue = () => {
   ];
 
   const nearbyHotels = [
-    { name: "The Kendall Hotel", distance: "0.3 miles", rate: "$259/night" },
-    { name: "Boston Marriott Cambridge", distance: "0.5 miles", rate: "$219/night" },
-    { name: "Le Méridien Cambridge-MIT", distance: "0.4 miles", rate: "$289/night" },
-    { name: "Hyatt Regency Cambridge", distance: "0.6 miles", rate: "$239/night" }
+    { name: "The Kendall Hotel", distance: "0.3 miles" },
+    { name: "Boston Marriott Cambridge", distance: "0.5 miles" },
+    { name: "Le Méridien Cambridge-MIT", distance: "0.4 miles" },
+    { name: "Hyatt Regency Cambridge", distance: "0.6 miles" }
   ];
+
 
   return (
     <Layout currentPage="venue">
