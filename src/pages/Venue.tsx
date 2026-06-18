@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Car, Plane, Train, Wifi, Coffee, Car as ParkingIcon } from "lucide-react";
+import venueMap from "@/assets/venue-map.png.asset.json";
 
 const Venue = () => {
   const amenities = [
