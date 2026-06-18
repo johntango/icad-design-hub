@@ -160,8 +160,8 @@ const Program = () => {
     {
       time: "15:17 - 15:34",
       title:
-        "A Combined AI-Axiomatic Design Method Based on the Case Stories Technique in the Development of Telemedicine Services",
-      speaker: "Chiara Parretti",
+        "How AI Can Optimize the Application of Axiomatic Design in the Development of Telemedicine Services Using the Gram-Schmidt Method",
+      speaker: "Fernando Rolli",
       authors: "Chiara Parretti, Fernando Rolli, Alessandro Polidoro, Riccardo Barbieri, Bianca Bindi, Paolo Citti",
       type: "session",
       location: "Main Auditorium",
