@@ -94,17 +94,20 @@ const Venue = () => {
             </div>
             
             <div>
-              <Card className="shadow-card">
+              <Card className="shadow-card overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <MapPin className="h-12 w-12 mx-auto text-primary mb-4" />
-                      <p className="text-muted-foreground">Interactive venue map coming soon</p>
-                    </div>
-                  </div>
+                  <img
+                    src={venueMap.url}
+                    alt="Map showing MIT Samberg Conference Center at 50 Memorial Dr and MIT's East Garage at 100 Main Street, Cambridge, MA"
+                    className="w-full h-auto"
+                  />
                 </CardContent>
               </Card>
+              <p className="text-sm text-muted-foreground mt-2 text-center">
+                MIT Samberg Conference Center (50 Memorial Dr) and MIT's East Garage (100 Main St)
+              </p>
             </div>
+
           </div>
         </section>
 
