@@ -94,31 +94,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Speakers */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Keynote Speakers</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Learn from the pioneers who are defining the intersection of AI and design
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
-              <Card key={index} className="shadow-card hover:shadow-glow transition-smooth">
-                <CardHeader>
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full gradient-hero"></div>
-                  <CardTitle className="text-center">{speaker.name}</CardTitle>
-                  <p className="text-center text-primary text-sm">{speaker.affiliation}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-center text-muted-foreground text-sm">{speaker.topic}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-20 gradient-hero text-white">
