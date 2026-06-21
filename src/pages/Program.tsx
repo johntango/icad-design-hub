@@ -195,6 +195,7 @@ const Program = () => {
 
 
     { time: "16:30 - 17:00", title: "IAAD-ADRF Meeting", type: "session", location: "Salon T" },
+    { time: "17:00 - 18:00", title: "Open Bar", type: "break", location: "Samberg Center Rooftop Patio" },
 
     { time: "18:00 - 20:00", title: "Nam P. Suh Conference Dinner", type: "dinner", location: "MIT Samberg Center" },
   ];
