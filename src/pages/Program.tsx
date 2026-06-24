@@ -512,6 +512,22 @@ const Program = () => {
                         </p>
                       )}
                       {item.authors && <p className="text-sm text-muted-foreground mt-1">{item.authors}</p>}
+                      {item.links && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {item.links.map((link, linkIndex) => (
+                            <a
+                              key={linkIndex}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-sm text-primary hover:underline"
+                            >
+                              <ExternalLink className="h-3 w-3 mr-1" />
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                       {item.papers && (
                         <ul className="mt-2 space-y-1">
                           {item.papers.map((paper, paperIndex) => (
@@ -561,6 +577,22 @@ const Program = () => {
                         </p>
                       )}
                       {item.authors && <p className="text-sm text-muted-foreground mt-1">{item.authors}</p>}
+                      {item.links && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {item.links.map((link, linkIndex) => (
+                            <a
+                              key={linkIndex}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-sm text-primary hover:underline"
+                            >
+                              <ExternalLink className="h-3 w-3 mr-1" />
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CardContent>
