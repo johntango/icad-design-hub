@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, MapPin, User } from "lucide-react";
+import { Clock, ExternalLink, MapPin, User } from "lucide-react";
 import aiLady from "@/assets/ai-lady.png";
 
 const Program = () => {
@@ -36,6 +36,10 @@ const Program = () => {
       authors: "David Cochran",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://sysdesign.org/icad/" },
+        { label: "Slides", url: "https://drive.google.com/file/d/1vQpLOPXHFiBQ6Zv5eS4b_wx4-pi60bKE/view?usp=sharing" },
+      ],
     },
     {
       time: "9:34 - 9:51",
@@ -44,6 +48,10 @@ const Program = () => {
       authors: "Pam Mantri, John Thomas, John Williams",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://drive.google.com/file/d/1ZsgNUyKxBPNnhLGx-Ps0oL6lWzK4CFzB/view?usp=drive_link" },
+        { label: "Slides", url: "https://drive.google.com/file/d/1GOoaMmAlA_lABt-6RONbsNH-qFpFzXtN/view?usp=drive_link" },
+      ],
     },
     {
       time: "9:51 - 10:08",
@@ -52,6 +60,9 @@ const Program = () => {
       authors: "António Gabriel-Santos, João Fradinho, Miguel Cavique, António Mourão",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://docs.google.com/presentation/d/1HZAm5LVshhri-ISbN6k0qae9atDVpp1M/edit?usp=sharing&ouid=109505314484205819849&rtpof=true&sd=true" },
+      ],
     },
     {
       time: "10:08 - 10:25",
@@ -60,6 +71,9 @@ const Program = () => {
       authors: "Matteo De Marchi, Dylan Morelato, Christopher Brown, Erwin Rauch",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://drive.google.com/file/d/1jtFtKaErjzG_IMWgseAa8CPFSFSDb6_S/view?usp=sharing" },
+      ],
     },
 
     { time: "10:30 - 10:50", title: "Coffee Break", type: "break", location: "Exhibition Hall" },
@@ -81,6 +95,9 @@ const Program = () => {
       authors: "Xin Chen, Kai Cheng, Mark Jackson",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://drive.google.com/file/d/1JaquQ_j-2EkexP6cav13s28g_HSS-eOJ/view?usp=sharing" },
+      ],
     },
     {
       time: "11:24 - 11:41",
@@ -89,6 +106,10 @@ const Program = () => {
       authors: "John Thomas, Pam Mantri, John Williams",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "Slides", url: "https://docs.google.com/presentation/d/1_73CWJnuY1ubM9zOyKPZUWs-LI2cepTa/edit?usp=drive_link&ouid=102319577356666103226&rtpof=true&sd=true" },
+        { label: "Slides", url: "https://drive.google.com/file/d/11aq8dCwQGzfF8vT3O_Kt5Yde3YNNU5tA/view?usp=drive_link" },
+      ],
     },
     {
       time: "11:41 - 11:58",
@@ -97,6 +118,9 @@ const Program = () => {
       authors: "Federico Quijada",
       type: "session",
       location: "Main Auditorium",
+      links: [
+        { label: "10 min Video", url: "https://youtu.be/nudzEnfJNOQ" },
+      ],
     },
 
     { time: "12:00 - 13:00", title: "Break (No Lunch Provided)", type: "break", location: "" },
