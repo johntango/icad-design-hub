@@ -22,15 +22,6 @@ const Payment = () => {
   const [showTestProduct, setShowTestProduct] = useState(false);
   const { toast } = useToast();
 
-  useEffect(() => {
-    const existingScript = document.querySelector('script[src="https://js.stripe.com/v3/buy-button.js"]');
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://js.stripe.com/v3/buy-button.js";
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  }, []);
 
   const pricingPlans = [
     {
