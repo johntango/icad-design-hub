@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Check, Users, Star } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -217,14 +217,7 @@ const Payment = () => {
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <div className="flex justify-center">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<stripe-buy-button
-                          buy-button-id="buy_btn_1TRYrXGgpfLkdZwmjAUbrCMf"
-                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                        ></stripe-buy-button>`,
-                      }}
-                    />
+                    <Button disabled variant="secondary">Registration Closed</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -240,14 +233,7 @@ const Payment = () => {
                 </CardHeader>
                 <CardContent className="p-4 pt-0">
                   <div className="flex justify-center">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<stripe-buy-button
-                          buy-button-id="buy_btn_1TRYv5GgpfLkdZwmwXxgU3X7"
-                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                        ></stripe-buy-button>`,
-                      }}
-                    />
+                    <Button disabled variant="secondary">Registration Closed</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -269,14 +255,7 @@ const Payment = () => {
                   </CardHeader>
                   <CardContent className="p-4 pt-0">
                     <div className="flex justify-center">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: `<stripe-buy-button
-                            buy-button-id="${plan.buyButtonId}"
-                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`,
-                        }}
-                      />
+                      <Button disabled variant="secondary">Registration Closed</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -303,14 +282,7 @@ const Payment = () => {
                     </li>
                   </ul>
                   <div className="flex justify-center">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<stripe-buy-button
-                          buy-button-id="buy_btn_1TI6qgGgpfLkdZwmw9ZsooYY"
-                          publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                        ></stripe-buy-button>`,
-                      }}
-                    />
+                    <Button disabled variant="secondary">Registration Closed</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -323,14 +295,7 @@ const Payment = () => {
                   </CardHeader>
                   <CardContent className="p-4 pt-0">
                     <div className="flex justify-center">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: `<stripe-buy-button
-                            buy-button-id="buy_btn_1THl5mGgpfLkdZwmgrhhBhH3"
-                            publishable-key="${STRIPE_PUBLISHABLE_KEY}"
-                          ></stripe-buy-button>`,
-                        }}
-                      />
+                      <Button disabled variant="secondary">Registration Closed</Button>
                     </div>
                   </CardContent>
                 </Card>
