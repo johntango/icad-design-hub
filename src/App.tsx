@@ -9,7 +9,6 @@ import Index from "./pages/Index";
 import Committee from "./pages/Committee";
 import CallForPapers from "./pages/CallForPapers";
 import Venue from "./pages/Venue";
-import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import Program from "./pages/Program";
 import Dates from "./pages/Dates";
