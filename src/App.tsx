@@ -9,7 +9,6 @@ import Index from "./pages/Index";
 import Committee from "./pages/Committee";
 import CallForPapers from "./pages/CallForPapers";
 import Venue from "./pages/Venue";
-import Payment from "./pages/Payment";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import Program from "./pages/Program";
 import Dates from "./pages/Dates";
@@ -37,7 +36,7 @@ const App = () => (
             <Route path="/program" element={<Program />} />
             <Route path="/dates" element={<Dates />} />
             <Route path="/visa" element={<Visa />} />
-            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment" element={<NotFound />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/register-interest" element={<RegisterInterest />} />
             <Route path="/privacy" element={<Privacy />} />
